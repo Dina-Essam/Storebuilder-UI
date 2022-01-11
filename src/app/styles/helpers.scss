@@ -1,0 +1,122 @@
+//Font-size By Pixel //
+@for $i from 1 through 100 {
+  .font-size-#{$i} {
+    font-size: #{$i + 'px'};
+  }
+}
+//Width By Percentage //
+@for $i from 1 through 100 {
+  .width-#{$i} {
+    width: #{$i + '%'};
+  }
+}
+//Spacing > Padding By Pixel //
+@for $i from 1 through 100 {
+  .padding-#{$i} {
+    padding: #{$i + 'px'};
+  }
+}
+@for $i from 1 through 100 {
+  .padding-t-#{$i} {
+    padding-top: #{$i + 'px'};
+  }
+}
+@for $i from 1 through 100 {
+  .padding-b-#{$i} {
+    padding-bottom: #{$i + 'px'};
+  }
+}
+@for $i from 1 through 100 {
+  .padding-l-#{$i} {
+    padding-left: #{$i + 'px'};
+  }
+}
+@for $i from 1 through 100 {
+  .padding-r-#{$i} {
+    padding-right: #{$i + 'px'};
+  }
+}
+@for $i from 1 through 100 {
+  .padding-x-#{$i} {
+    padding-top: #{$i + 'px'};
+    padding-bottom: #{$i + 'px'};
+  }
+}
+@for $i from 1 through 100 {
+  .padding-y-#{$i} {
+    padding-right: #{$i + 'px'};
+    padding-left: #{$i + 'px'};
+  }
+}
+//Spacing > Margin By Pixel //
+@for $i from 1 through 100 {
+  .margin-#{$i} {
+    margin: #{$i + 'px'};
+  }
+}
+@for $i from 1 through 100 {
+  .margin-t-#{$i} {
+    margin-top: #{$i + 'px'};
+  }
+}
+@for $i from 1 through 100 {
+  .margin-b-#{$i} {
+    margin-bottom: #{$i + 'px'};
+  }
+}
+@for $i from 1 through 100 {
+  .margin-l-#{$i} {
+    margin-left: #{$i + 'px'};
+  }
+}
+@for $i from 1 through 100 {
+  .margin-r-#{$i} {
+    margin-right: #{$i + 'px'};
+  }
+}
+@for $i from 1 through 100 {
+  .margin-x-#{$i} {
+    margin-top: #{$i + 'px'};
+    margin-bottom: #{$i + 'px'};
+  }
+}
+@for $i from 1 through 100 {
+  .margin-y-#{$i} {
+    margin-right: #{$i + 'px'};
+    margin-left: #{$i + 'px'};
+  }
+}
+
+.regular-font{
+  font-family: var(--regular-font) !important;
+}
+.medium-font{
+  font-family: var(--medium-font) !important;
+}
+.bold-font{
+  font-family: var(--bold-font) !important;
+}
+.main-color{
+  color: var(--main-color)
+}
+.second-color{
+  color: var(--second-color)
+}
+.third-color{
+  color: var(--third-color)
+}
+.white-color{
+  color: var(--white-color)
+}
+.bg-main-color{
+  background-color: var(--main-color)
+}
+.bg-second-color{
+  background-color: var(--second-color)
+}
+.bg-third-color{
+  background-color: var(--third-color)
+}
+.bg-white-color{
+  background-color: var(--white-color)
+}

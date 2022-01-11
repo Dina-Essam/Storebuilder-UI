@@ -1,0 +1,13 @@
+{
+  "header": {
+    "logout":"Log Out",
+    "login":"Login / Signup",
+    "signIn": "Sign in"
+  },
+  "navbar": {
+    "all": "All"
+  },
+  "buttons": {
+    "viewAll": "View All"
+  }
+}

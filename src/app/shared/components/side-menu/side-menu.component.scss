@@ -1,0 +1,19 @@
+.side-menu{
+  .section{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    border-bottom: 1px solid lightgray;
+    .title{
+      font-family: var(--bold-font);
+      font-size: 16px;
+      color: black;
+    }
+    .category{
+      font-size: 15px;
+      color: var(--main-color)
+    }
+  }
+}

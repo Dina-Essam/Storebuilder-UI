@@ -1,0 +1,18 @@
+input{
+  width: 100%;
+  background: #F5F5F5 0 0 no-repeat padding-box !important;
+  box-shadow: 0 2px 4px #00000003 !important;
+  border: unset;
+  padding: 0 10px;
+  font-size: 12px;
+  &:focus{
+    outline: unset;
+    border: 1px solid #FFCC00 !important;
+  }
+}
+.color{
+  background-color: #FFCC00;
+  i{
+    color: black;
+  }
+}

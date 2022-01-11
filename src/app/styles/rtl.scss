@@ -1,0 +1,88 @@
+.rtl{
+  direction: rtl!important;
+}
+.deep-rtl{
+  *{
+    direction: rtl !important;
+  }
+}
+
+[dir="rtl"] {
+  .p-inputgroup-addon {
+    &:first-child {
+      border-top-left-radius: unset !important;
+      border-bottom-left-radius: unset !important;
+      border-top-right-radius: 3px;
+      border-bottom-right-radius: 3px;
+    }
+    &:last-child {
+      border-top-right-radius: unset !important;
+      border-bottom-right-radius: unset !important;
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
+    }
+  }
+  .p-inputgroup {
+    button {
+      &:first-child {
+        border-top-left-radius: unset !important;
+        border-bottom-left-radius: unset !important;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+      }
+      &:last-child {
+        border-top-right-radius: unset !important;
+        border-bottom-right-radius: unset !important;
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+      }
+    }
+    input {
+      &:first-child {
+        border-top-left-radius: unset !important;
+        border-bottom-left-radius: unset !important;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+      }
+      &:last-child {
+        border-top-right-radius: unset !important;
+        border-bottom-right-radius: unset !important;
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+      }
+    }
+    >.p-inputwrapper {
+      &:first-child {
+        >.p-component {
+          border-top-left-radius: unset !important;
+          border-bottom-left-radius: unset !important;
+          border-top-right-radius: 3px;
+          border-bottom-right-radius: 3px;
+          >.p-inputtext {
+            border-top-left-radius: unset !important;
+            border-bottom-left-radius: unset !important;
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+          }
+        }
+      }
+      &:last-child {
+        >.p-component {
+          border-top-right-radius: unset !important;
+          border-bottom-right-radius: unset !important;
+          border-top-left-radius: 3px;
+          border-bottom-left-radius: 3px;
+          >.p-inputtext {
+            border-top-right-radius: unset !important;
+            border-bottom-right-radius: unset !important;
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+          }
+        }
+      }
+    }
+  }
+  .pi-bars:before {
+    content: "\e91d";
+  }
+}

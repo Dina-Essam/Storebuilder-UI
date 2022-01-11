@@ -1,0 +1,47 @@
+.header{
+  .p-badge {
+    font-size: 0.75rem;
+    min-width: 1rem;
+    height: 1rem;
+    line-height: 1rem;
+  }
+}
+
+.side-menu{
+  .p-sidebar-header {
+    height: 99px;
+    background-color: var(--main-color);
+  }
+  .p-sidebar-icon {
+    color: white !important;
+    &:hover{
+      color: var(--main-color) !important;
+    }
+  }
+}
+
+.main-slider{
+  .owl-theme {
+    .owl-dots {
+      position: relative;
+      bottom: 35px;
+      .owl-dot {
+        span {
+          width: 30px;
+          height: 5px;
+          background: white;
+        }
+        &.active {
+          span {
+            background: #FFCC00;
+          }
+        }
+        &:hover {
+          span {
+            background: #FFCC00;
+          }
+        }
+      }
+    }
+  }
+}

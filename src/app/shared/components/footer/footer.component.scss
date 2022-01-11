@@ -1,0 +1,23 @@
+.footer{
+  width: 100%;
+  .to-top{
+    min-height: 45px;
+    background-color: var(--third-color);
+    color: var(--white-color);
+    font-size: 12px;
+    font-family: var(--regular-font);
+  }
+  .content{
+    background-color: var(--main-color);
+    color: var(--white-color);
+    min-height: 200px;
+    font-family: var(--regular-font);
+    font-size: 14px;
+  }
+  .copy-rights{
+    // height: 45px;
+    background-color: var(--second-color);
+    color: var(--white-color);
+    font-size: 14px;
+  }
+}
