@@ -9,5 +9,15 @@
   },
   "buttons": {
     "viewAll": "View All"
+  },
+  "sideMenu": {
+    "home": "Home",
+    "categories": "Categories",
+    "merchants": "Merchants",
+    "allMerchants": "All allMerchants",
+    "help": "Help",
+    "yourAccount": "Your account",
+    "customerService": "Customer Service",
+    "signIn": "Sign-In"
   }
 }

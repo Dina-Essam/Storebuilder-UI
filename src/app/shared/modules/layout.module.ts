@@ -6,6 +6,7 @@ import {NavbarComponent} from "../components/navbar/navbar.component";
 import {SideMenuComponent} from "../components/side-menu/side-menu.component";
 import { SearchComponent } from '../components/search/search.component';
 import {SharedModule} from "./shared.module";
+import {LanguageSwitchComponent} from "../components/language-switch/language-switch.component";
 
 @NgModule({
   declarations: [
@@ -13,18 +14,20 @@ import {SharedModule} from "./shared.module";
     FooterComponent,
     NavbarComponent,
     SideMenuComponent,
-    SearchComponent
+    SearchComponent,
+    LanguageSwitchComponent
   ],
-  imports: [
-    CommonModule,
-    SharedModule,
-  ],
+    imports: [
+        CommonModule,
+        SharedModule
+    ],
   exports: [
     HeaderComponent,
     FooterComponent,
     NavbarComponent,
     SideMenuComponent,
     SearchComponent,
+    LanguageSwitchComponent,
     SharedModule
   ]
 })

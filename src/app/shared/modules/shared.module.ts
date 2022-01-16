@@ -1,16 +1,21 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {ProductCardComponent} from "../components/product-card/product-card.component";
-import { CarouselModule } from 'ngx-owl-carousel-o';
+import {CarouselModule} from 'ngx-owl-carousel-o';
 import {BadgeModule} from 'primeng/badge';
 import {SidebarModule} from "primeng/sidebar";
 import {ButtonModule} from "primeng/button";
 import {InputTextModule} from "primeng/inputtext";
 import {TranslateModule} from "@ngx-translate/core";
 import {DividerModule} from 'primeng/divider';
+import {ProductSliderComponent} from "../components/product-slider/product-slider.component";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
-  declarations: [ProductCardComponent],
+  declarations: [
+    ProductCardComponent,
+    ProductSliderComponent
+  ],
   imports: [
     CommonModule,
     TranslateModule,
@@ -19,7 +24,8 @@ import {DividerModule} from 'primeng/divider';
     SidebarModule,
     ButtonModule,
     InputTextModule,
-    DividerModule
+    DividerModule,
+    FormsModule,
   ],
   exports: [
     CommonModule,
@@ -29,7 +35,11 @@ import {DividerModule} from 'primeng/divider';
     SidebarModule,
     ButtonModule,
     InputTextModule,
-    DividerModule
+    DividerModule,
+    ProductCardComponent,
+    ProductSliderComponent,
+    FormsModule
   ]
 })
-export class SharedModule { }
+export class SharedModule {
+}

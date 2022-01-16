@@ -1,19 +1,24 @@
 <header class="header px-2 pt-1">
   <div class="grid flex flex-wrap">
-    <div class="col-6 md:col-2 flex align-items-center px-2">
+    <div class="col-4 md:col-2 lg:col-2 flex align-items-center px-2">
       <img class="logo" src="https://bestlifeonline.com/wp-content/uploads/sites/3/2018/09/tostitos.jpg?quality=82&strip=1&resize=640%2C360" alt="">
     </div>
-    <div class="col-6 md:col-2 md:flex-order-2 flex align-items-center justify-content-center actions px-2">
-      <span>
+    <div class="col-8 md:col-4 lg:col-3 md:flex-order-2 flex align-items-center justify-content-center actions px-2">
+      <span class="cursor-pointer">
         <i class="pi pi-user">
-          <span class="mx-2">{{'header.signIn' | translate}}</span>
+          <span class="ml-2">{{'header.signIn' | translate}}</span>
         </i>
       </span>
-      <span class="mx-3">
-        <i class="pi pi-shopping-cart" pBadge value="2"></i>
+      <a href="/cart" class="cart_route">
+        <span class="mx-3 cursor-pointer">
+          <i class="pi pi-shopping-cart" pBadge value="2"></i>
+        </span>
+      </a>
+      <span>
+        <app-language-switch></app-language-switch>
       </span>
     </div>
-    <div class="col-12 md:col-8 md:flex-order-1 flex-order-2  flex align-items-center">
+    <div class="col-12 md:col-6 lg:col-7 md:flex-order-1 flex-order-2  flex align-items-center">
       <app-search class="w-full"></app-search>
     </div>
   </div>

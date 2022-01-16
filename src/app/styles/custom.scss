@@ -60,3 +60,46 @@
     }
   }
 }
+.card-slider {
+  position: relative;
+  .owl-carousel .owl-stage-outer {
+    padding: 10px 0;
+  }
+  .owl-carousel {
+    width: 100%;
+    .owl-nav {
+      padding: 0 !important;
+      .owl-next {
+        position: absolute;
+        right: -35px;
+        top: 0;
+        bottom: 0;
+        margin: auto !important;
+        background: transparent !important;
+        height: 30px !important;
+        font-size: 10px;
+
+        span {
+          font-size: 25px;
+          color: #000;
+        }
+      }
+
+      .owl-prev {
+        position: absolute;
+        left: -35px;
+        top: 0;
+        bottom: 0;
+        margin: auto !important;
+        background: transparent !important;
+        height: 30px !important;
+        font-size: 10px;
+
+        span {
+          font-size: 25px;
+          color: #000;
+        }
+      }
+    }
+  }
+}

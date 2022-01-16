@@ -1,29 +1,29 @@
-<div class="side-menu">
+<div class="side-menu cursor-auto">
   <p-sidebar [(visible)]="display" [baseZIndex]="10" [position]="lang === 'ar' ? 'right' : 'left'">
     <div class="flex flex-column align-items-start w-full">
       <div class="section px-2 py-4">
-        <div class="title">Home</div>
+        <div class="title cursor-pointer">{{'sideMenu.home' | translate}}</div>
       </div>
       <div class="section px-2 py-4">
-        <div class="title">Categories</div>
-        <div class="category my-2">Best sellers</div>
-        <div class="category my-2">New releases</div>
-        <div class="category my-2">Phones</div>
-        <div class="category my-2">Electronics</div>
-        <div class="category my-2">Gaming</div>
-        <div class="category my-2">Fashion</div>
-        <div class="category my-2">Pet supplies</div>
-        <div class="category my-2">Browse all categories</div>
+        <div class="title cursor-pointer">{{'sideMenu.categories' | translate}}</div>
+        <div class="category cursor-pointer my-2">Best sellers</div>
+        <div class="category cursor-pointer my-2">New releases</div>
+        <div class="category cursor-pointer my-2">Phones</div>
+        <div class="category cursor-pointer my-2">Electronics</div>
+        <div class="category cursor-pointer my-2">Gaming</div>
+        <div class="category cursor-pointer my-2">Fashion</div>
+        <div class="category cursor-pointer my-2">Pet supplies</div>
+        <div class="category cursor-pointer my-2">Browse all categories</div>
       </div>
       <div class="section px-2 py-4">
-        <div class="title">Merchants</div>
-        <div class="category my-1">All merchants</div>
+        <div class="title cursor-pointer">{{'sideMenu.merchants' | translate}}</div>
+        <div class="category cursor-pointer my-1">{{'sideMenu.allMerchants' | translate}}</div>
       </div>
       <div class="section px-2 py-4">
-        <div class="title">Help</div>
-        <div class="category my-1">Your account</div>
-        <div class="category my-1">Customer service</div>
-        <div class="category my-1">Sign-in</div>
+        <div class="title cursor-pointer">{{'sideMenu.help' | translate}}</div>
+        <div class="category cursor-pointer my-1">{{'sideMenu.yourAccount' | translate}}</div>
+        <div class="category cursor-pointer my-1">{{'sideMenu.customerService' | translate}}</div>
+        <div class="category cursor-pointer my-1">{{'sideMenu.signIn' | translate}}</div>
       </div>
     </div>
   </p-sidebar>

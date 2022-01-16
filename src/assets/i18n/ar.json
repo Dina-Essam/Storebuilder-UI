@@ -9,5 +9,15 @@
   },
   "buttons": {
     "viewAll": "عرض الكل"
+  },
+  "sideMenu": {
+    "home": "الصفحة الرئيسية",
+    "categories": "التصنيفات",
+    "merchants": "التجار",
+    "allMerchants": "كل التجار",
+    "help": "المساعدة",
+    "yourAccount": "حسابك",
+    "customerService": "خدمة العملاء",
+    "signIn": "تسجيل الدخول"
   }
 }

@@ -1,0 +1,19 @@
+.cart {
+    .product_nums{
+        color: #A3A3A3;
+        font-size: 15px;
+        font-weight: normal;
+    }
+    .img_col{
+        .img_container{
+            width: 86px;
+            height: 114px;
+            text-align: center;
+            margin: auto;
+            img {
+                width: 100%;
+                object-fit: contain;
+            }
+        }
+    }
+}

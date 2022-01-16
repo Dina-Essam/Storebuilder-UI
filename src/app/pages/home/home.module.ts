@@ -7,6 +7,8 @@ import {routes} from "./routes";
 import {SharedModule} from "../../shared/modules/shared.module";
 import { SectionComponent } from './components/section/section.component';
 import { CategoryCardComponent } from './components/category-card/category-card.component';
+import { BannerComponent } from './components/banner/banner.component';
+import { CategorySliderComponent } from './components/category-slider/category-slider.component';
 
 
 @NgModule({
@@ -14,7 +16,9 @@ import { CategoryCardComponent } from './components/category-card/category-card.
     MainSliderComponent,
     IndexComponent,
     SectionComponent,
-    CategoryCardComponent
+    CategoryCardComponent,
+    BannerComponent,
+    CategorySliderComponent
   ],
   imports: [
     CommonModule,

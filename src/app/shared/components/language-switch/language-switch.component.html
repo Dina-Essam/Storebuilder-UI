@@ -1,0 +1,14 @@
+<div class="lang-switch">
+  <div *ngIf="lang == 'ar'" (click)="changeLang('ar')">
+    <h6 class="flex align-items-center m-0 cursor-pointer">
+      <img class="flag" src='assets/images/header/en-flag.png' />
+      En
+    </h6>
+  </div>
+  <div class="shopping-cart" *ngIf="lang == 'en'" (click)="changeLang('en')">
+    <h6 class="flex align-items-center m-0 cursor-pointer">
+      <img class="flag" src='assets/images/header/ar-flag.png' />
+      عربي
+    </h6>
+  </div>
+</div>

@@ -1,6 +1,6 @@
 <div class="p-inputgroup">
-  <input type="text w-full" pInputText placeholder="Search on MoMoMarket">
+  <input [(ngModel)]="search" type="text w-full" pInputText placeholder="Search on MoMoMarket" (keyup.enter)="searchProduct()">
   <span class="p-inputgroup-addon color">
-    <i class="pi pi-search"></i>
+    <i class="pi pi-search" (click)="searchProduct()"></i>
   </span>
 </div>

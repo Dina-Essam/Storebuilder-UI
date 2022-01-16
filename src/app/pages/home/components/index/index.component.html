@@ -1,18 +1,42 @@
 <section class="home">
   <app-main-slider></app-main-slider>
-  <div class="px-8 my-3">
-    <app-section [title]="'Categories'">
-      <div class="flex flex-row flex-wrap justify-content-between">
-        <app-category-card class="mt-2" [name]="'Sports'" [totalItems]="'20'"></app-category-card>
-        <app-category-card class="mt-2" [name]="'Sports'" [totalItems]="'20'"></app-category-card>
-        <app-category-card class="mt-2" [name]="'Sports'" [totalItems]="'20'"></app-category-card>
-        <app-category-card class="mt-2" [name]="'Sports'" [totalItems]="'20'"></app-category-card>
-        <app-category-card class="mt-2" [name]="'Sports'" [totalItems]="'20'"></app-category-card>
-        <app-category-card class="mt-2" [name]="'Sports'" [totalItems]="'20'"></app-category-card>
-        <app-category-card class="mt-2" [name]="'Sports'" [totalItems]="'20'"></app-category-card>
-        <app-category-card class="mt-2" [name]="'Sports'" [totalItems]="'20'"></app-category-card>
-        <app-category-card class="mt-2" [name]="'Sports'" [totalItems]="'20'"></app-category-card>
-      </div>
-    </app-section>
+  <div class="lg:px-11 md:px-8 px-5  my-3">
+    <div class="mt-3 mb-5">
+      <app-section [title]="'Categories'">
+        <app-category-slider></app-category-slider>
+      </app-section>
+    </div>
+    <div class="my-5">
+      <app-section [title]="'Best Seller'">
+        <app-product-slider></app-product-slider>
+      </app-section>
+    </div>
+    <div class="my-5">
+      <app-banner class="my-3" [banner]="{id: 1 , image: 'https://k.nooncdn.com/mon/1641888382984-cky9ty8eg1qpsvur3iuwspct8.png' }"></app-banner>
+    </div>
+    <div class="my-5">
+      <app-section [title]="'Fashion'">
+        <app-product-slider></app-product-slider>
+      </app-section>
+    </div>
+    <div class="my-5">
+      <app-section [title]="'Gaming'">
+        <app-product-slider></app-product-slider>
+      </app-section>
+    </div>
+    <div class="my-5">
+      <app-banner class="my-3" [banner]="{id: 1 , image: 'https://k.nooncdn.com/cms/pages/20211227/80250376363dbe9d3ab2968eea261fbb/ar_banner-01.png' }"></app-banner>
+    </div>
+    <div class="my-5">
+      <app-section [title]="'Electronics'">
+        <app-product-slider></app-product-slider>
+      </app-section>
+    </div>
+    <div class="my-5">
+      <app-section [title]="'Shoes'">
+        <app-product-slider></app-product-slider>
+      </app-section>
+    </div>
   </div>
+  
 </section>
