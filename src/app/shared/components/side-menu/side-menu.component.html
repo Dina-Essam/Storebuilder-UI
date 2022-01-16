@@ -2,7 +2,9 @@
   <p-sidebar [(visible)]="display" [baseZIndex]="10" [position]="lang === 'ar' ? 'right' : 'left'">
     <div class="flex flex-column align-items-start w-full">
       <div class="section px-2 py-4">
-        <div class="title cursor-pointer">{{'sideMenu.home' | translate}}</div>
+        <a class="no-underline" routerLink="/">
+          <div class="title cursor-pointer">{{'sideMenu.home' | translate}}</div>
+        </a>
       </div>
       <div class="section px-2 py-4">
         <div class="title cursor-pointer">{{'sideMenu.categories' | translate}}</div>

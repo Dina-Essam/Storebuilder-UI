@@ -5,7 +5,6 @@ import { IndexComponent } from './components/index/index.component';
 import {RouterModule} from "@angular/router";
 import {routes} from "./routes";
 import {SharedModule} from "../../shared/modules/shared.module";
-import { SectionComponent } from './components/section/section.component';
 import { CategoryCardComponent } from './components/category-card/category-card.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { CategorySliderComponent } from './components/category-slider/category-slider.component';
@@ -15,7 +14,6 @@ import { CategorySliderComponent } from './components/category-slider/category-s
   declarations: [
     MainSliderComponent,
     IndexComponent,
-    SectionComponent,
     CategoryCardComponent,
     BannerComponent,
     CategorySliderComponent

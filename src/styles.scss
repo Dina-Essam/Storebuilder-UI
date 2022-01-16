@@ -7,10 +7,7 @@
 @import "app/styles/custom";
 @import "app/styles/rtl";
 @import "app/styles/overrides";
-
 body{
   margin: 0;
-  * :not(.pi){
-    font-family: var(--regular-font);
-  }
+  background-color: var(--body-color);
 }

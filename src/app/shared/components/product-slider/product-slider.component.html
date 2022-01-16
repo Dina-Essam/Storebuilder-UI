@@ -1,37 +1,7 @@
 <section class="product-slider card-slider">
   <owl-carousel-o [options]="options">
-    <ng-template class="slide" carouselSlide>
-      <app-product-card></app-product-card>
-    </ng-template>
-    <ng-template class="slide" carouselSlide>
-      <app-product-card></app-product-card>
-    </ng-template>
-    <ng-template class="slide" carouselSlide>
-      <app-product-card></app-product-card>
-    </ng-template>
-    <ng-template class="slide" carouselSlide>
-      <app-product-card></app-product-card>
-    </ng-template>
-    <ng-template class="slide" carouselSlide>
-      <app-product-card></app-product-card>
-    </ng-template>
-    <ng-template class="slide" carouselSlide>
-      <app-product-card></app-product-card>
-    </ng-template>
-    <ng-template class="slide" carouselSlide>
-      <app-product-card></app-product-card>
-    </ng-template>
-    <ng-template class="slide" carouselSlide>
-      <app-product-card></app-product-card>
-    </ng-template>
-    <ng-template class="slide" carouselSlide>
-      <app-product-card></app-product-card>
-    </ng-template>
-    <ng-template class="slide" carouselSlide>
-      <app-product-card></app-product-card>
-    </ng-template>
-    <ng-template class="slide" carouselSlide>
-      <app-product-card></app-product-card>
+    <ng-template *ngFor="let product of products" class="slide" carouselSlide>
+      <app-product-card [product]="product"></app-product-card>
     </ng-template>
   </owl-carousel-o>
 </section>

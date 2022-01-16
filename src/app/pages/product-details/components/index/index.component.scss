@@ -1,0 +1,12 @@
+.product-details{
+  min-height: 100vh;
+  .information{
+    background-color: var(--white-color);
+    min-height: 50vh;
+    border-radius: 5px;
+  }
+  .images{
+    //background-color: var(--white-color);
+    min-height: 50vh;
+  }
+}

@@ -2,7 +2,11 @@ $main-color: #1D4C69;
 $second-color: #1a445e;
 $third-color: #345e78;
 $fourth-color: #FFCC00;
-$white-color: #fafafa;
+$white-color: #FFFFFF;
+$body-color: #fafafa;
+$flag-color: #FFCC00;
+$flag-font-color: #000000;
+$in-stock-color: #01B467;
 
 
 :root {
@@ -10,9 +14,14 @@ $white-color: #fafafa;
   --second-color: #1a445e;
   --third-color: #345e78;
   --fourth-color: #FFCC00;
-  --white-color: #fafafa;
+  --white-color: #FFFFFF;
+  --body-color: #fafafa;
+  --flag-color: #FFCC00;
+  --flag-font-color: #000000;
+  --in-stock-color: #01B467;
   --text-color-1: #1D4C69;
   --text-color-2: #fafafa;
+  --text-color-3: #000000;
   --light-font: 'main-light';
   --regular-font: 'main-regular';
   --medium-font: 'main-medium';

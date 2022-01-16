@@ -17,10 +17,10 @@ import {LanguageSwitchComponent} from "../components/language-switch/language-sw
     SearchComponent,
     LanguageSwitchComponent
   ],
-    imports: [
-        CommonModule,
-        SharedModule
-    ],
+  imports: [
+    CommonModule,
+    SharedModule,
+  ],
   exports: [
     HeaderComponent,
     FooterComponent,

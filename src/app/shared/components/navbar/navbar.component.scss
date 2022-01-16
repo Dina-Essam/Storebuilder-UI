@@ -10,14 +10,14 @@
     width: 100%;
     list-style-type: none;
     margin: 0;
-    padding: 5.5px 0;
+    padding: 3px 0;
     background-color: var(--second-color);
   }
   li {
     float: left;
     a {
       display: block;
-      color: white;
+      color: var(--white-color);
       text-align: center;
       white-space: nowrap;
       padding: 5px 10px;

@@ -1,6 +1,5 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {ProductCardComponent} from "../components/product-card/product-card.component";
 import {CarouselModule} from 'ngx-owl-carousel-o';
 import {BadgeModule} from 'primeng/badge';
 import {SidebarModule} from "primeng/sidebar";
@@ -8,13 +7,17 @@ import {ButtonModule} from "primeng/button";
 import {InputTextModule} from "primeng/inputtext";
 import {TranslateModule} from "@ngx-translate/core";
 import {DividerModule} from 'primeng/divider';
-import {ProductSliderComponent} from "../components/product-slider/product-slider.component";
 import {FormsModule} from "@angular/forms";
+import {RouterModule} from "@angular/router";
+import {ProductCardComponent} from "../components/product-card/product-card.component";
+import {ProductSliderComponent} from "../components/product-slider/product-slider.component";
+import {SectionComponent} from "../components/section/section.component";
 
 @NgModule({
   declarations: [
     ProductCardComponent,
-    ProductSliderComponent
+    ProductSliderComponent,
+    SectionComponent
   ],
   imports: [
     CommonModule,
@@ -26,6 +29,7 @@ import {FormsModule} from "@angular/forms";
     InputTextModule,
     DividerModule,
     FormsModule,
+    RouterModule
   ],
   exports: [
     CommonModule,
@@ -36,9 +40,11 @@ import {FormsModule} from "@angular/forms";
     ButtonModule,
     InputTextModule,
     DividerModule,
+    FormsModule,
     ProductCardComponent,
     ProductSliderComponent,
-    FormsModule
+    SectionComponent,
+    RouterModule
   ]
 })
 export class SharedModule {

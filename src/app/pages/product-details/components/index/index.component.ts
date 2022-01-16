@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-index',
@@ -6,17 +6,15 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./index.component.scss']
 })
 export class IndexComponent implements OnInit {
-  products: Array<any> = []
-
-  constructor() {
-  }
+  relatedProducts: Array<any> = []
+  productDetails: any;
+  constructor() { }
 
   ngOnInit(): void {
-    this.getProducts()
+    this.getRelatedProducts();
   }
-
-  getProducts(): void {
-    this.products = [
+  getRelatedProducts(): void {
+    this.relatedProducts = [
       {
         id: 1,
         name: 'Apple iPhone 12 Pro Max blue company 128g 12ram',
@@ -123,5 +121,6 @@ export class IndexComponent implements OnInit {
         ratingNumber: 112
       }
     ]
+    this.productDetails = this.relatedProducts[0]
   }
 }

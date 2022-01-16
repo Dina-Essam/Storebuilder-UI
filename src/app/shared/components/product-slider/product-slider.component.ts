@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {OwlOptions} from "ngx-owl-carousel-o";
 
 @Component({
@@ -8,7 +8,6 @@ import {OwlOptions} from "ngx-owl-carousel-o";
 })
 export class ProductSliderComponent implements OnInit {
   options: OwlOptions;
-
   constructor() {
     this.options = {
       stagePadding: 0,
@@ -65,8 +64,7 @@ export class ProductSliderComponent implements OnInit {
       }
     };
   }
-
+  @Input() products: Array<any> | undefined
   ngOnInit(): void {
   }
-
 }
