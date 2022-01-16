@@ -22,6 +22,10 @@ const routes: Routes = [
       {
         path: 'cart',
         loadChildren: () => import('./pages/cart/cart.module').then((m) => m.CartModule),
+      },
+      {
+        path: 'checkout',
+        loadChildren: () => import('./pages/checkout/checkout.module').then((m) => m.CheckoutModule),
       }
     ]
   }

@@ -1,0 +1,24 @@
+.checkout{
+    min-height: 100vh;
+    .information{
+      background-color: var(--white-color);
+      min-height: 50vh;
+      border-radius: 5px;
+    }
+    .images{
+      background-color: var(--white-color);
+      min-height: 50vh;
+    }
+    .product_nums{
+        color: #A3A3A3;
+        font-size: 15px;
+        font-weight: normal;
+    }
+
+    .radio{
+        border-color: var(--fourth-color) !important;
+        background: var(--fourth-color) !important;
+    }
+}
+
+
