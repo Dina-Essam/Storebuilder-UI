@@ -12,7 +12,6 @@ import { StoreService } from 'src/app/shared/services/store.service';
 export class CheckoutCardComponent  {
   @Input() products: Array<any>=new Array<any>();
    orderDetailsList=new Array<any>();
-loading:boolean=false;
   constructor(private orderService:OrderService
     ,private router:Router,private store: StoreService,
         private messageService: MessageService,
@@ -20,7 +19,8 @@ loading:boolean=false;
 
   CreateOrder():void
   {
-    this.loading=true;
+    this.store.set("loading",true);
+
     var totalPrice=0.0;
     for(let i=0;i<this.products.length;i++)
     {
@@ -43,7 +43,8 @@ loading:boolean=false;
     this.orderService.createOrder(order)
       .subscribe({
         next: (res: any) => {
-          this.loading=false
+          this.store.set("loading",false);
+
           if(res.success)
           {
             console.log("order",res);
@@ -60,7 +61,8 @@ loading:boolean=false;
           }
         },
         error: (err: any) => {
-          this.loading=false
+          this.store.set("loading",false);
+
           this.store.set('orderData','');
 
           this.messageService.add({severity:'error', summary: 'Fetch Error', detail: err.message});

@@ -22,3 +22,10 @@
     color: #fafafa !important;
   }
 }
+::ng-deep {
+  .p-overlaypanel {
+    right: 0 !important;
+    left: auto !important;
+
+  }
+}
