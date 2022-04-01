@@ -2,11 +2,13 @@
 @import "app/styles/fonts";
 @import "app/styles/variables";
 @import "app/styles/mixins";
-@import "app/styles/buttons";
 @import "app/styles/helpers";
 @import "app/styles/custom";
+@import "app/styles/buttons";
 @import "app/styles/rtl";
 @import "app/styles/overrides";
+@import "app/styles/media-queries";
+
 body{
   margin: 0;
   background-color: var(--body-color);

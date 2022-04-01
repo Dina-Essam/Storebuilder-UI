@@ -1,0 +1,162 @@
+<section class="payment-dialog">
+  <div class="border-none shadow-4 h-3rem">
+  </div>
+  <div class="padding-21">
+    <div class="grid">
+      <div class="col-12 md:col-12 lg:col-12 align-items-start justify-content-start">
+        <h2 class="m-0 font-size-18 text-900 bold-font">
+          Pay with
+        </h2>
+      </div>
+      <div class="col-12 md:col-12">
+        <p-selectButton [options]="paymentOptions" [(ngModel)]="value" optionLabel="name" optionValue="value">
+          <ng-template class="width-50 justify-content-center" let-item>
+            <i [class]="item.icon"></i>
+            <h2 class="font-size-14">{{item.name}}</h2>
+          </ng-template>
+        </p-selectButton>
+      </div>
+      <div class="col-12">
+        <ng-container *ngIf="value===1; else cart">
+          <div class="grid">
+            <div class="col-12">
+              <div class="grid border-1 border-round border-200 m-0 mt-2">
+                <div class="col-12 flex flex-row justify-content-between align-content-between">
+                  <h3 class="font-size-16 bold-font mb-0">
+                    How it works?
+                  </h3>
+                  <button pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded p-button-text p-button-plain"></button>
+                </div>
+                <div class="col-12">
+                  <p class="text-400 font-size-14 mt-0">
+                    You need to have a MoMo account in order to proceed. We'll send you a request via the mobile app and USSD.
+                  </p>
+                </div>
+                <div class="col-12">
+                  <p class="text-400 font-size-14 mt-0 inline">
+                    Don't have MoMo yet?
+                  </p>
+                  <a class="no-underline main-color font-size-12 bold-font mb-4"> Sign-up now</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="p-fluid p-grid">
+                <div class="p-field p-col-12">
+                  <span class="p-float-label mt-3">
+                      <p-inputMask
+                        inputId="phone-number"
+                        mask="+999 999-999-999"
+                        [(ngModel)]="phoneNumber"
+                      ></p-inputMask>
+                      <label>Phone number *</label>
+                  </span>
+                </div>
+            </div>
+            </div>
+          </div>
+        </ng-container>
+        <ng-template #cart>
+          <div class="grid">
+            <div class="col-12">
+              <div class="p-fluid p-grid">
+              <span class="p-float-label p-field p-col-12 mt-3">
+                <p-inputMask
+                  mask="9999 9999 9999 9999"
+                  [(ngModel)]="creditcardNumber">
+                </p-inputMask>
+                <label>Card Number</label>
+              </span>
+              </div>
+            </div>
+            <div class="col-12 md:col-6 lg:col-6">
+              <div class="p-field  p-grid">
+                <span class="p-float-label p-field p-col-12 mt-3">
+                  <p-inputMask
+                  mask="99/99"
+                  [(ngModel)]="creditcardNumber">
+                </p-inputMask>
+                  <label>MM/YY</label>
+                </span>
+              </div>
+            </div>
+            <div class="col-12 md:col-6 lg:col-6">
+              <div class="p-field p-grid">
+                <span class="p-float-label p-field p-col-12 mt-3">
+                  <p-inputMask
+                  mask="999"
+                  [(ngModel)]="creditcardNumber">
+                </p-inputMask>
+                  <label>123</label>
+                </span>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="p-field p-grid">
+                <span class="p-float-label p-field p-col-12 mt-3">
+                    <input class="width-100" type="text" id="inputtext" pInputText [(ngModel)]="CardholderName">
+                    <label for="inputtext">Cardholder name</label>
+                </span>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="field-checkbox">
+                <p-checkbox [(ngModel)]="checked" [binary]="true" id="save"></p-checkbox>
+                <label class="text-400 font-size-14" for="save">Save card for later</label>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </div>
+      <div class="col-12">
+        <div class="flex justify-content-between flex-wrap card-container purple-container">
+          <p class="font-size-15 flex align-items-start justify-content-start mt-0">
+            Merchant name
+          </p>
+          <p class="font-size-15 text-500 flex align-items-end justify-content-end mt-0">
+            AfriElec
+          </p>
+        </div>
+        <div class="flex justify-content-between flex-wrap card-container purple-container">
+          <p class="font-size-15 flex align-items-start justify-content-start mt-0">
+            Merchant ref
+          </p>
+          <p class="font-size-15 text-500 flex align-items-end justify-content-end mt-0">
+            12345678
+          </p>
+        </div>
+        <div class="flex justify-content-between flex-wrap card-container purple-container">
+          <p class="font-size-15 font-bold text-900 flex align-items-start justify-content-start m-0">
+            Payment Total
+          </p>
+          <p class="font-size-15 font-bold text-900 flex align-items-end justify-content-end m-0">
+            UGX 10,001,400.00
+          </p>
+        </div>
+      </div>
+      <div class="col-12">
+        <ng-container *ngIf="value===1; else cartButton">
+          <button label="Request payment" class="col-12 my-2 width-100  second-btn"
+                  (click)="errorPayment()"
+                  pButton
+                  type="button">
+          </button>
+        </ng-container>
+        <ng-template #cartButton>
+          <p class="text-center text-green-500">
+            <i class="pi pi-lock text-green-500">
+
+            </i>
+            All your informations is safe and secured
+          </p>
+          <button label="Place your order" class="col-12 my-2 width-100  second-btn"
+                  (click)="waitingPayment()"
+                  pButton
+                  type="button">
+          </button>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+
+</section>

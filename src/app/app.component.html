@@ -1,9 +1,13 @@
 <section class="container">
-<app-header></app-header>
-  <div class="page">
-    <div class="main-content">
-      <router-outlet></router-outlet>
+  <app-header></app-header>
+    <div class="page">
+      <div class="main-content">
+        <div *ngIf="loading" class="spinner">
+          <p-progressSpinner></p-progressSpinner>
+        </div>
+        <p-toast class="toast" sticky=true [baseZIndex]="1"></p-toast>
+        <router-outlet></router-outlet>
+      </div>
+      <app-footer></app-footer>
     </div>
-    <app-footer></app-footer>
-  </div>
-</section>
+  </section>

@@ -1,0 +1,23 @@
+.login{
+  ::ng-deep {
+    .p-inputtext:enabled:hover {
+      border-color: var(--fourth-color) !important;
+    }
+
+    .p-inputtext:enabled:focus {
+      box-shadow: 0 0 0 0.1rem var(--fourth-color) !important;
+      border-color: var(--fourth-color) !important;
+      opacity: 0.5;
+    }
+    .p-inputtext{
+      background: #F5F5F5;
+      color: #323232;
+      font-weight: 700;
+    }
+    .p-float-label label{
+      color: #323232;
+    }
+  }
+
+}
+

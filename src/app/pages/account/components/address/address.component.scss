@@ -1,0 +1,93 @@
+.address {
+  min-height: 100%;
+
+  .address-card {
+    min-height: 50vh;
+    width: 100%;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+  }
+
+  .search-group {
+    .map-search {
+      width: 100%;
+      background-color: #F5F5F5;
+      box-shadow: 0 2px 4px #00000003;
+      padding: 13px 5px;
+      font-size: 15px;
+      color: black;
+      font-family: var(--regular-font);
+      border-top: 1px solid #ced4da;
+      border-bottom: 1px solid #ced4da;
+      border-left: unset;
+      border-right: unset;
+
+      &:focus, :hover {
+        outline: unset;
+        border-top: 1px solid #ced4da;
+        border-bottom: 1px solid #ced4da;
+        border-left: unset;
+        border-right: unset;
+      }
+    }
+
+    .icon-bg {
+      background-color: #F5F5F5 !important;
+      cursor: pointer;
+    }
+  }
+
+  .map {
+    width: 100%;
+    height: 224px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+  }
+
+
+  .form-input {
+    position: relative;
+    width: 100%;
+    background-color: #F5F5F5;
+    box-shadow: 0 2px 4px #00000003;
+    padding: 22px 10px 13px;
+    font-size: 15px;
+    color: black;
+    font-family: var(--regular-font);
+  }
+
+  agm-map {
+    height: 300px;
+  }
+}
+
+:host ::ng-deep .address {
+  .p-float-label {
+    label {
+      top: 30px;
+      font-size: 11px;
+      font-family: var(--medium-font);
+    }
+  }
+
+  .p-float-label {
+    input {
+      &:focus {
+        ~ {
+          label {
+            top: 15px !important;
+          }
+        }
+      }
+    }
+
+    input.p-filled {
+      ~ {
+        label {
+          top: 15px !important;
+        }
+      }
+    }
+  }
+
+}

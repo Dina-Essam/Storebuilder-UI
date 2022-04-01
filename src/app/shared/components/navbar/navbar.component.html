@@ -5,11 +5,8 @@
         <app-side-menu>{{'navbar.all' | translate}}</app-side-menu>
       </a>
     </li>
-    <li><a>Best Seller</a></li>
-    <li><a>New releases</a></li>
-    <li><a>Phones</a></li>
-    <li><a>Electronics</a></li>
-    <li><a>Gaming</a></li>
-    <li><a>Fashion</a></li>
+    <li *ngFor="let category of categories">
+      <a routerLink="/category/{{category.id}}">{{category.categoryName}}</a>
+    </li>
   </ul>
 </section>

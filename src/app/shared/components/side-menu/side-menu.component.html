@@ -2,35 +2,38 @@
   <p-sidebar [(visible)]="display" [baseZIndex]="10" [position]="lang === 'ar' ? 'right' : 'left'">
     <div class="flex flex-column align-items-start w-full">
       <div class="section px-2 py-4">
-        <a class="no-underline" routerLink="/">
+        <a (click)="closeMenu()" class="no-underline" routerLink="/">
           <div class="title cursor-pointer">{{'sideMenu.home' | translate}}</div>
         </a>
       </div>
       <div class="section px-2 py-4">
         <div class="title cursor-pointer">{{'sideMenu.categories' | translate}}</div>
-        <div class="category cursor-pointer my-2">Best sellers</div>
-        <div class="category cursor-pointer my-2">New releases</div>
-        <div class="category cursor-pointer my-2">Phones</div>
-        <div class="category cursor-pointer my-2">Electronics</div>
-        <div class="category cursor-pointer my-2">Gaming</div>
-        <div class="category cursor-pointer my-2">Fashion</div>
-        <div class="category cursor-pointer my-2">Pet supplies</div>
-        <div class="category cursor-pointer my-2">Browse all categories</div>
+
+        <div *ngFor="let category of categories" class="category cursor-pointer my-2">
+          <a routerLink="/category/{{category.id}}">{{category.categoryName}}</a>
+        </div>
+        <a class="category cursor-pointer my-2" routerLink="/categories">Browse all categories</a>
       </div>
       <div class="section px-2 py-4">
         <div class="title cursor-pointer">{{'sideMenu.merchants' | translate}}</div>
-        <div class="category cursor-pointer my-1">{{'sideMenu.allMerchants' | translate}}</div>
+        <a (click)="closeMenu()" class="no-underline" routerLink="/merchants">
+          <div class="category cursor-pointer my-1">{{'sideMenu.allMerchants' | translate}}</div>
+        </a>
       </div>
       <div class="section px-2 py-4">
         <div class="title cursor-pointer">{{'sideMenu.help' | translate}}</div>
-        <div class="category cursor-pointer my-1">{{'sideMenu.yourAccount' | translate}}</div>
+        <a (click)="closeMenu()" class="no-underline" routerLink="/account">
+          <div class="category cursor-pointer my-1">{{'sideMenu.yourAccount' | translate}}</div>
+        </a>
         <div class="category cursor-pointer my-1">{{'sideMenu.customerService' | translate}}</div>
-        <div class="category cursor-pointer my-1">{{'sideMenu.signIn' | translate}}</div>
+        <a (click)="closeMenu()" class="no-underline" routerLink="/login">
+          <div class="category cursor-pointer my-1">{{'sideMenu.signIn' | translate}}</div>
+        </a>
       </div>
     </div>
   </p-sidebar>
 
-  <i class="pi pi-bars" (click)="openMenu()">
+  <i (click)="openMenu()" class="pi pi-bars">
     <span class="ml-2 mr-1">
       <ng-content></ng-content>
     </span>

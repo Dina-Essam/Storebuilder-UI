@@ -1,27 +1,27 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IndexComponent } from './index.component';
+import { IndexComponent } from './components/index/index.component';
 import {RouterModule} from "@angular/router";
 import {routes} from "./routes";
 import {SharedModule} from "../../shared/modules/shared.module";
-import { TagModule } from 'primeng/tag';
-import {InputNumberModule} from 'primeng/inputnumber';
-import {CardModule} from 'primeng/card';
-import {ButtonModule} from 'primeng/button';
-import { PaymentIconsComponent } from '../../shared/components/payment-icons/payment.component';
+import {RippleModule} from "primeng/ripple";
+import { CartProductDetailsComponent } from './components/cart-product-details/cart-product-details.component';
+import { CheckoutCardComponent } from './components/checkout-card/checkout-card.component';
+import { EmptyCartComponent } from './components/empty-cart/empty-cart.component';
+
+
 @NgModule({
   declarations: [
     IndexComponent,
-    PaymentIconsComponent
+    CartProductDetailsComponent,
+    CheckoutCardComponent,
+    EmptyCartComponent
   ],
-  imports: [
-    CommonModule,
-    SharedModule,
-    TagModule,
-    InputNumberModule,
-    CardModule,
-    ButtonModule,
-    RouterModule.forChild(routes)
-  ]
+    imports: [
+        CommonModule,
+        SharedModule,
+        RouterModule.forChild(routes),
+        RippleModule
+    ]
 })
 export class CartModule { }

@@ -1,0 +1,5 @@
+<a class="category-card shadow-1 cursor-pointer no-underline" routerLink="/category/{{category.id}}">
+  <img [alt]="category.categoryName" [src]="category.image">
+  <div class="title mt-3">{{category.categoryName}}</div>
+  <div class="total-items mt-2">{{category.count_product}}k items</div>
+</a>

@@ -1,0 +1,105 @@
+
+////////// Media Queries ////////
+//Small Screens//
+@media screen and (min-width: 576px){
+  .sm\:px-9 {
+    padding-left: 6rem !important;
+    padding-right: 6rem !important;
+  }
+  .sm\:px-10 {
+    padding-left: 7rem !important;
+    padding-right: 7rem !important;
+  }
+  .sm\:px-11 {
+    padding-left: 8rem !important;
+    padding-right: 8rem !important;
+  }
+  .sm\:px-12 {
+    padding-left: 9rem !important;
+    padding-right: 9rem !important;
+  }
+  .floating-panel {
+    bottom: 0 !important;
+  }
+}
+
+//Medium Screens//
+@media screen and (min-width: 768px){
+  .main-content {
+    margin-top: 94px !important;
+  }
+  .content-container {
+    padding-left: 5rem !important;
+    padding-right: 5rem !important;
+  }
+  .md\:px-9 {
+    padding-left: 6rem !important;
+    padding-right: 6rem !important;
+  }
+  .md\:px-10 {
+    padding-left: 7rem !important;
+    padding-right: 7rem !important;
+  }
+  .md\:px-11 {
+    padding-left: 8rem !important;
+    padding-right: 8rem !important;
+  }
+  .md\:px-12 {
+    padding-left: 9rem !important;
+    padding-right: 9rem !important;
+  }
+}
+
+//Large Screens//
+@media screen and (min-width: 992px) {
+  .main-content {
+    margin-top: 94px !important;
+  }
+  .content-container {
+    padding-left: 8rem !important;
+    padding-right: 8rem !important;
+  }
+  .lg\:px-9 {
+    padding-left: 6rem !important;
+    padding-right: 6rem !important;
+  }
+  .lg\:px-10 {
+    padding-left: 7rem !important;
+    padding-right: 7rem !important;
+  }
+  .lg\:px-11 {
+    padding-left: 8rem !important;
+    padding-right: 8rem !important;
+  }
+  .lg\:px-12 {
+    padding-left: 9rem !important;
+    padding-right: 9rem !important;
+  }
+}
+
+//XLarge Screens//
+@media screen and (min-width: 1200px) {
+  .main-content {
+    margin-top: 94px !important;
+  }
+  .content-container {
+    padding-left: 8rem !important;
+    padding-right: 8rem !important;
+  }
+  .xl\:px-9 {
+    padding-left: 6rem !important;
+    padding-right: 6rem !important;
+  }
+  .xl\:px-10 {
+    padding-left: 7rem !important;
+    padding-right: 7rem !important;
+  }
+  .xl\:px-11 {
+    padding-left: 8rem !important;
+    padding-right: 8rem !important;
+  }
+  .xl\:px-12 {
+    padding-left: 9rem !important;
+    padding-right: 9rem !important;
+  }
+}

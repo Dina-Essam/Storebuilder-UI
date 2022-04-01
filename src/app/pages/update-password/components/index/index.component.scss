@@ -1,0 +1,20 @@
+::ng-deep .p-dialog .p-dialog-header{
+    display: none;
+}
+div.icon{
+    position: relative;
+    margin: auto;
+    .pi-check {
+      position: absolute;
+      top: 31%;
+      font-weight: bold;
+      left: 30%;
+      font-size: 1.2rem;
+    }
+}
+::ng-deep .p-dialog .p-dialog-footer {
+    text-align: center;
+}
+::ng-deep .p-dialog .p-dialog-footer button {
+    width: 90% !important
+}

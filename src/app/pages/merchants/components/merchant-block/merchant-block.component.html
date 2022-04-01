@@ -1,0 +1,12 @@
+<div class="grid mt-5">
+  <div class="col-12">
+    <div class="bold-font font-size-20">{{data.key}}</div>
+  </div>
+  <div class="col-12">
+    <div class="grid">
+      <div *ngFor="let merchant of data.merchants" class="col-12 md:col-4">
+        <div class="font-size-15 main-color medium-font my-1">{{merchant.name}}</div>
+      </div>
+    </div>
+  </div>
+</div>

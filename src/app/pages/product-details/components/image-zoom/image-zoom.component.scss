@@ -1,0 +1,53 @@
+.product-images {
+  .img-zoom {
+    height: 500px;
+  }
+  .images-container {
+    .image {
+      width: 38px;
+      height: 50px;
+      cursor: pointer;
+
+      &:hover {
+        border: 1.5px solid var(--main-color);
+        border-radius: 2px;
+      }
+
+      &.active {
+        border: 1.5px solid var(--main-color);
+        border-radius: 2px;
+      }
+    }
+  }
+}
+
+:host ::ng-deep .product-images {
+  .ngxImageZoomContainer {
+    width: 100% !important;
+    height: 500px !important;
+    object-fit: contain;
+  }
+
+  .ngxImageZoomThumbnail {
+    width: 100% !important;
+    height: 500px !important;
+    object-fit: contain;
+  }
+
+  .images-container {
+    .p-carousel-items-content {
+      overflow: hidden;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .p-carousel-indicators {
+      display: none;
+    }
+
+    .p-carousel-item {
+      flex: initial !important;
+    }
+  }
+}

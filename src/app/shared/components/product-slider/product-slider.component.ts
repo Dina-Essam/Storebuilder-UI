@@ -1,5 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {OwlOptions} from "ngx-owl-carousel-o";
+import {Product} from "../../../interfaces/product";
+import {StoreService} from "../../services/store.service";
+import {Currency} from "../../../interfaces/global";
 
 @Component({
   selector: 'app-product-slider',
@@ -7,8 +10,31 @@ import {OwlOptions} from "ngx-owl-carousel-o";
   styleUrls: ['./product-slider.component.scss']
 })
 export class ProductSliderComponent implements OnInit {
-  options: OwlOptions;
-  constructor() {
+  options: OwlOptions = {} as OwlOptions;
+  currency: Currency = {} as Currency
+  @Input() products: Array<Product> | undefined
+
+  constructor(
+    private store: StoreService
+  ) {
+  }
+
+  ngOnInit(): void {
+    this.initData();
+  }
+
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+      console.log("products",this.products)
+      // Listen To Store Service For any change on Currency
+      this.store.subscription('currency')
+        .subscribe({
+          next: (res)=> this.currency = res
+        });
+    }, 10);
+  }
+
+  initData(): void {
     this.options = {
       stagePadding: 0,
       loop: true,
@@ -63,8 +89,5 @@ export class ProductSliderComponent implements OnInit {
         },
       }
     };
-  }
-  @Input() products: Array<any> | undefined
-  ngOnInit(): void {
   }
 }

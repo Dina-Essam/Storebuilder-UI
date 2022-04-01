@@ -1,0 +1,94 @@
+<section class="checkout">
+  <ng-container>
+    <div class="content-container my-3">
+      <div class="grid justify-content-center margin-x-37">
+        <div class="col-12 md:col-8 lg:col-4 border-round bg-white shadow-1 px-5 pt-6 width-40">
+          <div class="grid">
+            <div class="col-12 flex align-items-center justify-content-center">
+              <div class="border-circle w-6rem h-6rem m-2 bg-green-500 text-gray-900 font-bold flex align-items-center justify-content-center">
+                <a class="pi pi-check text-white" style="font-size: 2rem"></a>
+              </div>
+            </div>
+            <div class="col-12">
+              <p class="text-900 text-center font-size-18 bold-font mt-0">
+                Order placed!
+              </p>
+              <p class="text-400 text-center font-size-15">
+                Thanks for shopping on MoMoMarket, here is the summary of your order:
+              </p>
+            </div>
+            <div class="col-12 border-bottom-2 border-200">
+              <div class="flex justify-content-between flex-wrap card-container purple-container">
+                <p class="font-size-15 flex align-items-start justify-content-start mt-0">
+                  Item
+                </p>
+                <p class="font-size-15 text-500 flex align-items-end justify-content-end mt-0">
+                  UGX {{orderDetails.orderAmount}}
+                </p>
+              </div>
+              <div class="flex justify-content-between flex-wrap card-container purple-container">
+                <p class="font-size-15 flex align-items-start justify-content-start mt-0">
+                  Shipping
+                </p>
+                <p class="font-size-15 text-500 flex align-items-end justify-content-end mt-0">
+                  UGX 00.00
+                </p>
+              </div>
+              <div class="flex justify-content-between flex-wrap card-container purple-container">
+                <p class="font-size-15 flex align-items-start justify-content-start mt-0">
+                  VAT
+                </p>
+                <p class="font-size-15 text-500 flex align-items-end justify-content-end mt-0">
+                  UGX 00.00
+                </p>
+              </div>
+              <div class="flex justify-content-between flex-wrap card-container purple-container">
+                <p class="font-size-15 font-bold text-900 flex align-items-start justify-content-start m-0">
+                  Payment Total
+                </p>
+                <p class="font-size-15 font-bold text-900 flex align-items-end justify-content-end m-0">
+                  UGX {{orderDetails.orderAmount}}
+                </p>
+              </div>
+            </div>
+            <div class="col-12 border-bottom-2 border-200">
+              <div class="flex justify-content-between flex-wrap card-container purple-container">
+                <p class="font-size-15 flex align-items-start justify-content-start mt-0">
+                  Payment Method
+                </p>
+                <p class="font-size-15 text-500 flex align-items-end justify-content-end mt-0">
+                  Visa {{transactionData.CardNumber}}
+                </p>
+              </div>
+            </div>
+            <!-- <div class="col-12">
+              <div class="flex justify-content-between flex-wrap card-container purple-container">
+                <p class="font-size-15 flex align-items-start justify-content-start mt-0">
+                  Your Box Number
+                </p>
+                <p class="font-size-15 text-500 flex align-items-end justify-content-end mt-0">
+                  30
+                </p>
+              </div>
+              <div class="flex justify-content-between flex-wrap card-container purple-container">
+                <p class="font-size-15 flex align-items-start justify-content-start mt-0">
+                  Your Pickup secret code
+                </p>
+                <p class="font-size-15 text-500 flex align-items-end justify-content-end mt-0">
+                  123456789358
+                </p>
+              </div>
+            </div> -->
+            <div class="col-12">
+              <button label="My orders" class="col-12 my-2 width-100  second-btn"
+                      [routerLink]="['/orders']"
+                      pButton
+                      type="button">
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</section>

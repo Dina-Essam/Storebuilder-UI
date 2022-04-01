@@ -8,16 +8,37 @@
     "all": "All"
   },
   "buttons": {
-    "viewAll": "View All"
+    "viewAll": "View All",
+    "addToCart": "Add to cart",
+    "shopNow": "Shop now",
+    "readMore": "Show more",
+    "readLess": "Show Less"
   },
   "sideMenu": {
     "home": "Home",
     "categories": "Categories",
     "merchants": "Merchants",
-    "allMerchants": "All allMerchants",
+    "allMerchants": "All Merchants",
     "help": "Help",
     "yourAccount": "Your account",
     "customerService": "Customer Service",
     "signIn": "Sign-In"
+  },
+  "account": {
+    "address": {
+      "addAddress": "Add Address",
+      "search": "Search",
+      "first-name": "Receiver first name",
+      "last-name": "Receiver last name",
+      "state": "State",
+      "post-code": "PostCode",
+      "phone": "Receiver phone number",
+      "street": "Street address or P.O. Box",
+      "building": "Apt, Suite, Unit, building (optional)",
+      "country": "Country",
+      "city": "City",
+      "landMark": "Nearest Landmark (optional)",
+      "instructions": "Delivery instructions (optional)"
+    }
   }
 }

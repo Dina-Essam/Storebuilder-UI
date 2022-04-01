@@ -1,0 +1,37 @@
+
+::ng-deep .p-cascadeselect-label {
+  text-align: left;
+  color: #000 !important;
+  font-weight: bold;
+  padding: 0 !important;
+}
+
+::ng-deep .p-cascadeselect {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  margin-bottom: 0.5rem;
+}
+::ng-deep .pi-chevron-down:before {
+  color: #000;
+}
+::ng-deep .p-dialog .p-dialog-footer {
+  text-align: center;
+}
+::ng-deep .p-dialog .p-dialog-footer button {
+  width: 90%;
+}
+::ng-deep .approvedModal .p-dialog .p-dialog-header {
+  display: none;
+}
+div.icon{
+  position: relative;
+  margin: auto;
+  .pi-check {
+    position: absolute;
+    top: 31%;
+    font-weight: bold;
+    left: 30%;
+    font-size: 1.2rem;
+  }
+}

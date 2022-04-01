@@ -1,0 +1,156 @@
+<section class="information p-4 shadow-1">
+  <!--  Main Info Section-->
+  <p class="font-size-20">{{product.productName}}</p>
+  <div class="mt-3 flex flex-row justify-content-between">
+    <div>
+      <!-- <span class="font-size-20 light-font">{{currency.symbol}}</span> -->
+      <span class="font-size-20 medium-font mx-1">{{product.priceValue | number : '1.2-2'}}</span>
+    </div>
+    <div class="flex flex-row align-items-center">
+      <div *ngIf="product.in_stock" class="in-stock">
+        <div class="dot-6 bg-green-400"></div>
+        in stock
+      </div>
+      <!-- <div class="rating mt-1 mx-2">
+        <i class="star pi pi-star-fill"></i>
+        <div class="rate mx-1">{{product.rating}}</div>
+        <div class="rating-number">({{product.rates_count}})</div>
+      </div> -->
+    </div>
+  </div>
+  <!--  Flag Section-->
+  <div class="mt-3 product-flag">
+    <i class="pi pi-box mx-1"></i>
+    Free delivery & Return
+  </div>
+  <!--  Buttons Section-->
+  <div class="mt-5 flex flex-row justify-content-between">
+    <button [label]="'buttons.addToCart' | translate" class="mr-1 width-50 main-btn"
+            pButton
+            (click)="addItem(product)"
+            type="button">
+    </button>
+    <button [label]="'buttons.shopNow' | translate" class="ml-1 width-50  second-btn"
+            [routerLink]="['/']"
+            pButton
+            type="button">
+            
+    </button>
+  </div>
+  <!--  About Product Section-->
+  <div class="mt-5">
+    <p class="bold-font font-size-18">About this product</p>
+    <p [ngClass]="{'show-more': showMore}" class="pt-2 description">
+      {{product.description}}
+    </p>
+    <p (click)="readMore()" class="main-color cursor-pointer medium-font font-size-14">
+      {{ (!showMore ? 'buttons.readMore' : 'buttons.readLess') | translate}}
+    </p>
+  </div>
+  <!--  Details Section-->
+  <div class="mt-5">
+    <p class="bold-font font-size-18">Product details</p>
+    <div class="flex flex-row justify-content-between">
+      <p class="font-size-15 my-1">Merchant name</p>
+      <p class="prop-color font-size-15 my-1">AfriElec</p>
+    </div>
+    <div class="flex flex-row justify-content-between">
+      <p class="font-size-15 my-1">SKU</p>
+      <p class="prop-color font-size-15 my-1">{{product.sku}}</p>
+    </div>
+    <div class="flex flex-row justify-content-between">
+      <p class="font-size-15 my-1">Height</p>
+      <p class="prop-color font-size-15 my-1">{{product.height}}</p>
+    </div>
+    <div class="flex flex-row justify-content-between">
+      <p class="font-size-15 my-1">Width</p>
+      <p class="prop-color font-size-15 my-1">{{product.width}}</p>
+    </div>
+    <div class="flex flex-row justify-content-between">
+      <p class="font-size-15 my-1">Weight</p>
+      <p class="prop-color font-size-15 my-1">{{product.weight}}</p>
+    </div>
+  </div>
+  <!--  Overall rating Section-->
+  <!-- <div class="mt-5">
+    <p class="bold-font font-size-18">Customer reviews</p>
+    <div class="flex flex-row justify-content-between">
+      <div class="flex flex-column align-items-center justify-content-center width-45 overall-rating">
+        <p class="bold-font font-size-15">Overall rating</p>
+        <div class="medium-font font-size-28 fourth-color">{{product.rating}}</div>
+        <p-rating [(ngModel)]="product.rating" [cancel]="false" [readonly]="true" [stars]="5"></p-rating>
+        <p class="font-light mt-0 font-size-13 prop-color">Based on {{product.rates_count}} ratings</p>
+      </div>
+      <div class="flex flex-column align-items-center justify-content-center width-45">
+        <div class="flex flex-row align-items-center w-full">
+          <div class="font-medium font-size-13">5</div>
+          <i class="pi  pi-star-fill font-size-12 mx-1 rating-color"></i>
+          <div class="width-75 mx-1">
+            <p-progressBar [showValue]="false" [value]="product.rates_number_count.has_five"
+                           class="w-full"></p-progressBar>
+          </div>
+          <div class="font-light font-size-13 prop-color">({{product.rates_number_count.has_five}})</div>
+        </div>
+        <div class="flex flex-row align-items-center w-full my-1">
+          <div class="font-medium font-size-13">4</div>
+          <i class="pi  pi-star-fill font-size-12 mx-1 rating-color"></i>
+          <div class="width-75 mx-1">
+            <p-progressBar [showValue]="false" [value]="product.rates_number_count.has_four"
+                           class="w-full"></p-progressBar>
+          </div>
+          <div class="font-light font-size-13 prop-color">({{product.rates_number_count.has_four}})</div>
+        </div>
+        <div class="flex flex-row align-items-center w-full my-1">
+          <div class="font-medium font-size-13">3</div>
+          <i class="pi  pi-star-fill font-size-12 mx-1 rating-color"></i>
+          <div class="width-75 mx-1">
+            <p-progressBar [showValue]="false" [value]="product.rates_number_count.has_three"
+                           class="w-full"></p-progressBar>
+          </div>
+          <div class="font-light font-size-13 prop-color">({{product.rates_number_count.has_three}})</div>
+        </div>
+        <div class="flex flex-row align-items-center w-full my-1">
+          <div class="font-medium font-size-13">2</div>
+          <i class="pi  pi-star-fill font-size-12 mx-1 rating-color"></i>
+          <div class="width-75 mx-1">
+            <p-progressBar [showValue]="false" [value]="product.rates_number_count.has_two"
+                           class="w-full"></p-progressBar>
+          </div>
+          <div class="font-light font-size-13 prop-color">({{product.rates_number_count.has_two}})</div>
+        </div>
+        <div class="flex flex-row align-items-center w-full my-1">
+          <div class="font-medium font-size-13">1</div>
+          <i class="pi  pi-star-fill font-size-12 mx-1 rating-color"></i>
+          <div class="width-75 mx-1">
+            <p-progressBar [showValue]="false" [value]="product.rates_number_count.has_one"
+                           class="w-full"></p-progressBar>
+          </div>
+          <div class="font-light font-size-13 prop-color">({{product.rates_number_count.has_one}})</div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <!--  Customer reviews Section-->
+  <div class="mt-5">
+    <p-divider></p-divider>
+    <ng-container *ngFor="let review of product.reviews">
+      <div class="users-reviews">
+        <div class="flex flex-row align-items-center">
+          <div class="medium-font font-size-13">{{review.name}}</div>
+          <i class="pi pi-check-circle mx-2 main-color font-size-12"></i>
+          <div class="light-font font-size-12 prop-color">Verified purchase</div>
+        </div>
+        <p-rating [(ngModel)]="review.rating" [cancel]="false" [readonly]="true" [stars]="5"></p-rating>
+        <div class="light-font font-size-12 prop-color">{{review.created_at}}</div>
+        <p class="light-font font-size-14 mt-1">{{review.comment}}</p>
+        <p-divider></p-divider>
+      </div>
+    </ng-container>
+    <!-- <ng-container *ngIf="product.reviews.length">
+      <div (click)="loadMoreReviews()"
+           class="mt-3 w-full cursor-pointer text-center main-color font-size-14 medium-font">
+        View more reviews
+      </div>
+    </ng-container> -->
+  </div>
+</section>

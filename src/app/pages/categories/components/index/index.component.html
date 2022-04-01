@@ -1,0 +1,21 @@
+<section class="categories-page">
+  <div class="breadcrumb">
+    <p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+  </div>
+  <!--  -->
+  <div class="content-container mt-5">
+    <div class="grid">
+      <div class="col-12 md:col-6 flex justify-content-center  md:justify-content-start">
+        <div class="font-size-22 bold-font">
+          All Categories
+        </div>
+      </div>
+    </div>
+    <!--  -->
+    <div class="my-5 flex flex-row justify-content-start flex-wrap">
+      <a *ngFor="let category of categories" class="mt-2 mx-2" routerLink="/category/{{category.id}}">
+        <app-category-card [category]="category" ></app-category-card>
+      </a>
+    </div>
+  </div>
+</section>

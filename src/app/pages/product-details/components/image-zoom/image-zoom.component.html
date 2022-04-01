@@ -1,0 +1,39 @@
+<section class="product-images">
+  <div class="grid justify-content-center align-items-center">
+    <div class="col-2 justify-content-center align-items-center">
+      <div class="images-container">
+        <!-- <p-carousel [autoplayInterval]="3500"
+                    [circular]="true"
+                    [numScroll]="1"
+                    [numVisible]="5"
+                    [orientation]="'vertical'"
+                    [showIndicators]="true"
+                    [showNavigators]="true"
+                    [value]="product.images"
+                    [verticalViewPortHeight]="'450px'"> -->
+
+          <ng-template let-img pTemplate="item">
+            <img (click)="selectImage(img)"
+                 [alt]="product.productName"
+                 [ngClass]="{'active': img.id === selectedImage.id}"
+                 [src]="img.small_image_url"
+                 class="image my-3">
+          </ng-template>
+
+        <!-- </p-carousel> -->
+      </div>
+    </div>
+    <div class="col-10">
+      <div class="img-zoom">
+        <lib-ngx-image-zoom [circularLens]="true"
+                            [enableLens]="true"
+                            [fullImage]="selectedImage.large_image_url"
+                            [lensHeight]="300"
+                            [lensWidth]="300"
+                            [magnification]="2"
+                            [thumbImage]="selectedImage.medium_image_url">
+        </lib-ngx-image-zoom>
+      </div>
+    </div>
+  </div>
+</section>

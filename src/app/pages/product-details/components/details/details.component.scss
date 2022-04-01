@@ -1,0 +1,75 @@
+.information {
+  background-color: var(--white-color);
+  min-height: 50vh;
+  border-radius: 5px;
+  overflow-x: hidden;
+
+  .description {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 99%;
+    @supports (-webkit-line-clamp:3) {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: initial;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
+
+    &.show-more {
+      white-space: normal;
+      overflow: unset;
+      text-overflow: unset;
+      max-width: 100%;
+      display: block;
+    }
+  }
+
+  .prop-color {
+    color: #A3A3A3;
+  }
+}
+
+:host ::ng-deep .information {
+  .p-progressbar {
+    height: 5px;
+    border-radius: 3px;
+
+    .p-progressbar-value {
+      border: 0 none;
+      margin: 0;
+      background: var(--rating-color);
+    }
+  }
+
+  .users-reviews {
+    .p-rating {
+      .p-rating-icon {
+        &.pi-star-fill {
+          font-size: 10px;
+          margin: 0 2px;
+        }
+
+        &.pi-star {
+          font-size: 10px;
+          margin: 0 2px;
+        }
+      }
+    }
+  }
+
+  .overall-rating {
+    .p-rating {
+      .p-rating-icon {
+        &.pi-star-fill {
+          font-size: 14px;
+        }
+        &.pi-star {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

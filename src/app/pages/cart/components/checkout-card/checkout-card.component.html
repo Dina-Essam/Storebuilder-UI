@@ -1,0 +1,18 @@
+<section class="checkout-card">
+  <div *ngIf="loading" class="spinner">
+    <p-progressSpinner></p-progressSpinner>
+  </div>
+  <div *ngIf="!loading" class="grid align-items-center justify-content-center bg-white px-7 border-round shadow-1 pt-5 pb-3">
+    <div class="col-12 flex flex-row align-items-start justify-content-between my-2">
+      <div class="product-flag mr-2">
+        <i class="pi pi-box mx-1"></i>
+        Free delivery & Return
+      </div>
+      <h6 class="font-size-12 my-0 ml-2">Arrives: Sep 16 - Oct 1</h6>
+    </div>
+    <button label="Proceed to checkout ({{products.length}} item)" (click)="CreateOrder()" class="col-12 my-2 width-100  second-btn"
+            pButton
+            type="button">
+    </button>
+  </div>
+</section>

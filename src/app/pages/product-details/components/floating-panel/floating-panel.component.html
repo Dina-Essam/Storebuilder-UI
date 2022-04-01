@@ -1,0 +1,27 @@
+<div class="floating-panel shadow-1 lg:px-11 md:px-8 px-5">
+  <div class="grid h-100 mt-0">
+    <div class="flex col-12 md:col-6 lg:col-8">
+      <div class="flex flex-column justify-content-center align-items-center md:align-items-start">
+        <div>{{product.productName}}</div>
+        <div class="flex flex-row lg:justify-content-start md:justify-content-center">
+          <!-- <span class="font-size-18 light-font">{{currency.symbol}}</span> -->
+          <span class="font-size-18 medium-font mx-2">{{product.priceValue | number : '1.2-2'}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 md:col-6 lg:col-4">
+      <div class="flex flex-row justify-content-between align-items-center buttons lg:px-5 md:px-3 sm:px-2 px-1">
+        <button [label]="'buttons.addToCart' | translate" class="mr-1 width-50 main-btn"
+                pButton
+                (click)="addItem(product)"
+                type="button">
+        </button>
+        <button [label]="'buttons.shopNow' | translate" class="ml-1 width-50  second-btn"
+                [routerLink]="['/']"
+                pButton
+                type="button">
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,255 @@
+<section class="order-refund-page">
+  <div class="breadcrumb">
+    <p-breadcrumb [model]="items"></p-breadcrumb>
+  </div>
+  <!--  -->
+  <div class="content-container mt-5">
+    <div class="grid">
+      <div class="col-12 text-center mb-3">
+        <div class="number">
+          <span>Order no. </span>
+          <span>1234567</span>
+        </div>
+        <div class="date text-500 text-xs my-3">
+          <span>25/08/21 • </span>
+          <span>11:00 AM</span>
+        </div>
+        <div class="price mb-3">
+          <span class="text-sm pr-2">UGX</span>
+          <span class="font-bold text-2xl">10,001,400.00</span>
+        </div>
+        <div class="status-badge px-2 py-1">
+          <i class="pi pi-circle-fill text-green-500 mr-1"></i>
+          <span class="text-white text-xs">Delivered</span>
+        </div>
+      </div>
+      <!--  -->
+      <div (click)="reviewModal()" class="col-12 item-details surface-200 mb-3 border-round px-3 pb-3 cursor-pointer">
+        <h6 class="item-title my-3 text-500 text-base">Order details</h6>
+        <div class="flex justify-content-between">
+          <div class="flex justify-content-start">
+            <img src="https://z.nooncdn.com/products/tr:n-t_240/v1638171385/N52057841A_1.jpg" alt="">
+            <div class="mx-3">
+              <div class="">
+                Apple iPhone 12 P...
+              </div>
+              <div class="text-500 text-xs">
+                SKU 1234568
+              </div>
+            </div>
+          </div>
+          <div class="price">
+            <span class="text-sm pr-2">UGX</span>
+            <span class="font-bold text-xl">10,001,400.00</span>
+          </div>
+        </div>
+      </div>
+      <!--  -->
+      <div class="col-12 item-details surface-200 mb-3 border-round px-3 pb-3">
+        <h6 class="item-title my-3 text-500 text-base">Shipping details</h6>
+        <div class="flex justify-content-between mt-3 mb-3">
+          <div class="flex justify-content-start">
+            First Name
+          </div>
+          <div class="flex flex-content-end text-500">
+            Ahmed
+          </div>
+        </div>
+        <div class="flex justify-content-between mb-3">
+          <div class="flex justify-content-start">
+            Last name
+          </div>
+          <div class="flex flex-content-end text-500">
+            Ali
+          </div>
+        </div>
+        <div class="flex justify-content-between">
+          <div class="flex justify-content-start">
+            Address
+          </div>
+          <div class="flex flex-content-end text-500">
+            Apt 7, Entebbe Rd,
+            <br>
+            Kampala, Uganda.
+          </div>
+        </div>
+      </div>
+      <!--  -->
+      <div class="col-12 item-details surface-200 mb-3 border-round px-3 pb-3">
+        <h6 class="item-title my-3 text-500 text-base">Payment details</h6>
+        <div class="flex justify-content-between mt-3 mb-3">
+          <div class="flex justify-content-start">
+            Type
+          </div>
+          <div class="flex flex-content-end text-500">
+            MoMo Pay
+          </div>
+        </div>
+        <div class="flex justify-content-between mb-3">
+          <div class="flex justify-content-start">
+            Transaction ID
+          </div>
+          <div class="flex flex-content-end text-500">
+            12346567
+          </div>
+        </div>
+      </div>
+      <!--  -->
+      <div class="col-12 item-details surface-200 border-round px-3 pb-3">
+        <h6 class="item-title my-3 text-500 text-base">Amount details</h6>
+        <div class="flex justify-content-between mt-3 mb-3">
+          <div class="flex justify-content-start">
+            Item
+          </div>
+          <div class="flex flex-content-end text-500">
+            UGX 200.00
+          </div>
+        </div>
+        <div class="flex justify-content-between mb-3">
+          <div class="flex justify-content-start">
+            Shipping
+          </div>
+          <div class="flex flex-content-end text-500">
+            UGX 20.00
+          </div>
+        </div>
+        <div class="flex justify-content-between mt-3 mb-3">
+          <div class="flex justify-content-start">
+            VAT
+          </div>
+          <div class="flex flex-content-end text-500">
+            UGX 22.00
+          </div>
+        </div>
+        <div class="flex justify-content-between mb-3">
+          <div class="flex justify-content-start">
+            Payment total
+          </div>
+          <div class="flex flex-content-end text-500">
+            UGX 242.00
+          </div>
+        </div>
+      </div>
+      <!--  -->
+      <div class="col-12 text-center">
+        <button (click)="requestRefundModal()" label="Request Refund"
+          class="p-field p-col-12 my-4 width-25 m-auto font-size-14 second-btn" pButton type="button">
+        </button>
+        <!--  Refund Modal -->
+        <p-dialog class="requestRefund" [(visible)]="displayRequestRefundModal" [style]="{width: '30vw'}"
+          [baseZIndex]="10000">
+          <ng-template pTemplate="content">
+            <div class="border-bottom-1 pb-3 border-500">
+              <p class="font-bold mt-5 text-black-alpha-90">Request refund</p>
+              <p class="m-0">Select the product(s) you want to request refund</p>
+            </div>
+            <div class="my-3 select-product flex justify-content-between">
+              <div class="p-field-checkbox">
+                <label class="flex justify-content-between" for="ny">
+                  <img class="flex" src="https://z.nooncdn.com/products/tr:n-t_240/v1638171385/N52057841A_1.jpg" alt="">
+                  <div class="flex flex-column mx-2">
+                    <p class="font-bold text-black-alpha-90 my-0">Apple iPhone 12 P...</p>
+                    <p class="my-1 text-left">SKU 1234568</p>
+                  </div>
+                </label>
+                <p-checkbox name="group1" value="New York" [(ngModel)]="selectedproducts" inputId="ny">
+                </p-checkbox>
+              </div>
+            </div>
+            <div class="my-3 select-product flex justify-content-between">
+              <div class="p-field-checkbox">
+                <label class="flex justify-content-between" for="ny">
+                  <img class="flex" src="https://z.nooncdn.com/products/tr:n-t_240/v1638171385/N52057841A_1.jpg" alt="">
+                  <div class="flex flex-column mx-2">
+                    <p class="font-bold text-black-alpha-90 my-0">Apple iPhone 12 P...</p>
+                    <p class="my-1 text-left">SKU 1234568</p>
+                  </div>
+                </label>
+                <p-checkbox name="group1" value="New York" [(ngModel)]="selectedproducts1" inputId="ny">
+                </p-checkbox>
+              </div>
+            </div>
+            <div class="type-reason">
+              <span class="p-float-label">
+                <textarea id="float-input" rows="6" cols="50" pInputTextarea class="surface-300"></textarea>
+                <label for="float-input">Reason for refund</label>
+              </span>
+            </div>
+            <div class="px-1 mt-3 flex justify-content-between">
+              <div class="text-500">Amount</div>
+              <div class="font-bold text-black-alpha-90">UGX 10,001,400.00</div>
+            </div>
+          </ng-template>
+          <ng-template pTemplate="footer">
+            <button (click)="refundApprovedModal()" label="Request refund"
+              class="p-field p-col-12 my-4 width-25 m-auto font-size-14 second-btn" pButton type="button">
+            </button>
+          </ng-template>
+        </p-dialog>
+        <!-- End Refund Modal -->
+        <!-- Cancel Approved Modal -->
+        <p-dialog class="refunfApprovedModal" [(visible)]="displayApprovedModal" [style]="{width: '30vw'}"
+          [baseZIndex]="10000">
+          <ng-template pTemplate="content">
+            <div class="icon mt-5 bg-green-500 text-white text-center w-3rem h-3rem border-circle icon bg-green-500 ">
+              <i class="pi pi-check"></i>
+            </div>
+            <p class="font-bold  text-black-alpha-90">Refund request sent</p>
+            <p class="m-0">We've notified the merchant and will revert back to you once they accept or decline the
+              request.</p>
+          </ng-template>
+          <ng-template pTemplate="footer">
+            <button label="OK" class="p-field p-col-12 my-4 width-25 m-auto font-size-14 second-btn" pButton
+              type="button" [routerLink]="['/orders']">
+            </button>
+          </ng-template>
+        </p-dialog>
+        <!-- End Cancel Approved Modal -->
+        <!--  Review Modal -->
+        <p-dialog class="review" [(visible)]="displayReviewModal" [style]="{width: '30vw'}" [baseZIndex]="10000">
+          <ng-template pTemplate="content">
+            <div class="pb-3">
+              <p class="font-bold mt-5 text-black-alpha-90">Rate and Review</p>
+              <p class="m-0">Take the time to tell us what do you think about the item you received</p>
+            </div>
+            <div class="rate mt-3 mb-5">
+              <i class="pi pi-star-fill mx-1 text-2xl"></i>
+              <i class="pi pi-star-fill mx-1 text-2xl"></i>
+              <i class="pi pi-star-fill mx-1 text-2xl"></i>
+              <i class="pi pi-star-fill mx-1 text-2xl"></i>
+            </div>
+            <div class="type-reason">
+              <span class="p-float-label">
+                <textarea id="float-input" rows="6" cols="50" pInputTextarea class="surface-300"></textarea>
+                <label for="float-input">Your review</label>
+              </span>
+            </div>
+          </ng-template>
+          <ng-template pTemplate="footer">
+            <button (click)="submitReviewModal()" label="Submit Review"
+              class="p-field p-col-12 my-4 width-25 m-auto font-size-14 second-btn" pButton type="button">
+            </button>
+          </ng-template>
+        </p-dialog>
+        <!-- End Review Modal -->
+        <!-- Submit Review Modal -->
+        <p-dialog class="submitRewiewModal" [(visible)]="displaySubmitReviewModal" [style]="{width: '30vw'}"
+          [baseZIndex]="10000">
+          <ng-template pTemplate="content">
+            <div class="icon mt-5 bg-green-500 text-white text-center w-3rem h-3rem border-circle icon bg-green-500 ">
+              <i class="pi pi-check"></i>
+            </div>
+            <p class="font-bold  text-black-alpha-90">Review submitted</p>
+            <p class="m-0">Your review will be published once our team has reviewed and approved it</p>
+          </ng-template>
+          <ng-template pTemplate="footer">
+            <button label="OK" class="p-field p-col-12 my-4 width-25 m-auto font-size-14 second-btn" pButton
+              type="button" (click)="closeModal()">
+            </button>
+          </ng-template>
+        </p-dialog>
+        <!-- End Submit Review Modal -->
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,40 @@
+<section class="account-page content-container mt-5">
+  <div class="grid">
+    <div class="col-12 md:col-6 flex justify-content-center  md:justify-content-start">
+      <div class="font-size-22 bold-font">Your Account</div>
+    </div>
+  </div>
+  <!-- Links -->
+  <div class="mt-5 flex flex-column justify-content-start flex-wrap account-links">
+    <a routerLink="/orders"
+      class="flex justify-content-between py-3 px-3 surface-100 mb-2 no-underline text-black-alpha-90 border-round">
+      <span>
+        <i class="pi pi-list mx-1"></i>
+        Your Orders
+      </span>
+      <i class="pi pi-angle-right text-blue-800"></i>
+    </a>
+    <a routerLink="/account/address"
+       class="flex justify-content-between py-3 px-3 surface-100 mb-2 no-underline text-black-alpha-90 border-round">
+      <span>
+        <i class="pi pi-map-marker mx-1"></i>
+        Your Addresses
+      </span>
+      <i class="pi pi-angle-right text-blue-800"></i>
+    </a>
+    <a routerLink="/details"
+      class="flex justify-content-between py-3 px-3 surface-100 mb-2 no-underline text-black-alpha-90 border-round">
+      <span>
+        <i class="pi pi-user mx-1"></i>
+        Your Details
+      </span>
+      <i class="pi pi-angle-right text-blue-800"></i>
+    </a>
+  </div>
+  <!-- /Links -->
+  <!-- Logout -->
+  <a (click)="logOut()" class="mt-4 no-underline text-blue-800 cursor-pointer">
+    Logout
+  </a>
+  <!-- /Logout -->
+</section>

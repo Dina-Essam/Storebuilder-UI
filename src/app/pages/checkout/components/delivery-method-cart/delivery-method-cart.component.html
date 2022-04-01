@@ -1,0 +1,35 @@
+<section class="delivery-method-card mr-3">
+  <div class="grid align-items-start justify-content-start px-4 border-round bg-white shadow-1 pt-5 pb-3">
+    <p class="col-12 font-size-16 bold-font mt-0">Please select your preferred delivery method</p>
+    <div *ngFor="let method of methods" class="col-12 field-checkbox">
+      <p-radioButton [inputId]="method.key" name="category" [value]="method" [(ngModel)]="selectedDeliveryMethod"></p-radioButton>
+      <label class="text-500 font-size-16" [for]="method.key">{{method.name}}</label>
+    </div>
+    <div class="col-12 grid" [ngStyle]="{'visibility':selectedDeliveryMethod.name === 'MTN Pickup Boxes' ? 'visible' : 'hidden'}">
+      <div class="col-12 md:col-6 lg:col-6 mt-3">
+        <div class="p-fluid p-grid">
+          <span class="p-float-label p-field p-col-12">
+            <p-dropdown id="city" [options]="cities" [(ngModel)]="selectedCityCode" optionLabel="name"></p-dropdown>
+            <label for="city">City</label>
+          </span>
+        </div>
+      </div>
+      <div class="col-12 md:col-6 lg:col-6 mt-3">
+        <div class="p-fluid p-grid">
+          <span class="p-float-label p-field p-col-12">
+            <p-dropdown id="area" [options]="areas" [(ngModel)]="selectedAreaCode" optionLabel="name"></p-dropdown>
+            <label for="area">Area</label>
+          </span>
+        </div>
+      </div>
+      <div class="col-12 md:col-6 lg:col-6 mt-3">
+        <div class="p-fluid p-grid">
+          <span class="p-float-label p-field p-col-12">
+           <p-dropdown id="location" [options]="locations" [(ngModel)]="selectedLocationCode" optionLabel="name"></p-dropdown>
+            <label for="location">Location</label>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

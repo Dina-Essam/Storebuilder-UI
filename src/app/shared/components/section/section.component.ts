@@ -8,6 +8,7 @@ import {Component, Input, OnInit} from '@angular/core';
 export class SectionComponent implements OnInit {
   constructor() { }
   @Input() title: string | undefined
+  @Input() categoryID: number | undefined
 
   ngOnInit(): void {
   }

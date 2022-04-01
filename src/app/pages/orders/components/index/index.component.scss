@@ -1,0 +1,21 @@
+.orders-links {
+    a {
+        width: 100%;
+        &:first-child {
+            border-top: 1px solid #e0e0e0;            
+        }
+        img {
+            width: 37px;
+            height: 48px;
+        }
+        .right-icon {
+            position: relative;
+            top: 40%;
+            i {
+                color: #1D4C69;
+            }
+        }
+        
+    }
+    
+}

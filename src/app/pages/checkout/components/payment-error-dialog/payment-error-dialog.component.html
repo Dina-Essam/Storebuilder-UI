@@ -1,0 +1,24 @@
+<section class="payment-error-dialog">
+  <div class="border-none shadow-4 h-3rem">
+  </div>
+  <div class="padding-21">
+    <div class="flex flex-column align-items-center justify-content-center" style="height: 100%; min-height: 60vh">
+      <div class="border-circle w-4rem h-4rem m-2 bg-red font-bold flex align-items-center justify-content-center">
+        <a class="pi pi-times text-white" style="font-size: 1rem"></a>
+      </div>
+      <p class="text-900 font-size-24 bold-font mb-0">
+        Payment failed
+      </p>
+      <p class="text-400 font-size-15 text-center width-80 light-font mt-0">
+        Your payment was not successfully processed. Please try again
+      </p>
+    </div>
+    <div class="flex-column flex justify-content-end align-content-end">
+      <button label="Try again" class="col-12 my-2 width-100  second-btn"
+              (click)="viewOrders()"
+              pButton
+              type="button">
+      </button>
+    </div>
+  </div>
+</section>

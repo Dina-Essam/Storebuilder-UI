@@ -1,0 +1,182 @@
+<section class="order-details-page">
+  <div class="breadcrumb">
+    <p-breadcrumb [model]="items"></p-breadcrumb>
+  </div>
+  <!--  -->
+  <div class="content-container mt-5">
+    <div class="grid">
+      <div class="col-12 text-center mb-3">
+        <div class="number">
+          <span>Order no. </span>
+          <span>{{ order.order_details.increment_id }}</span>
+        </div>
+        <div class="date text-500 text-xs my-3">
+          <span>{{ order.order_details.created_at | date }} • </span>
+          <span>{{ order.order_details.created_at | date:'shortTime' }}</span>
+        </div>
+        <div class="price mb-3">
+          <span class="text-sm pr-2">{{ order.order_details.base_currency_code }}</span>
+          <span class="font-bold text-2xl">{{ order.order_details.grand_total }}</span>
+        </div>
+        <div class="status-badge px-2 py-1">
+          <i class="pi pi-circle-fill  mr-1 pending" *ngIf="order.order_details.status === 'pending' "></i>
+          <i class="pi pi-circle-fill  mr-1 processing" *ngIf="order.order_details.status === 'processing' "></i>
+          <i class="pi pi-circle-fill  mr-1 completed" *ngIf="order.order_details.status === 'completed' "></i>
+          <i class="pi pi-circle-fill  mr-1 canceled" *ngIf="order.order_details.status === 'canceled' "></i>
+          <span class="text-white text-xs">{{ order.order_details.status }}</span>
+        </div>
+      </div>
+      <!--  -->
+      <div class="col-12 item-details surface-200 mb-3 border-round px-3 pb-3">
+        <h6 class="item-title my-3 text-500 text-base">Order details</h6>
+        <div class="flex justify-content-between border-bottom-1 border-700 mb-2 pb-2" *ngFor="let order of orderItems">
+          <div class="flex justify-content-start">
+            <img src="https://z.nooncdn.com/products/tr:n-t_240/v1638171385/N52057841A_1.jpg" alt="">
+            <div class="mx-3">
+              <div class="">
+                {{ order.name }}
+              </div>
+              <div class="text-500 text-xs">
+                SKU {{ order.sku }}
+              </div>
+            </div>
+          </div>
+          <div class="price">
+            <span class="text-sm pr-2">UGX</span>
+            <span class="font-bold text-xl">{{ order.price }}</span>
+          </div>
+        </div>
+      </div>
+      <!--  -->
+      <div class="col-12 item-details surface-200 mb-3 border-round px-3 pb-3">
+        <h6 class="item-title my-3 text-500 text-base">Shipping details</h6>
+        <div class="flex justify-content-between mt-3 mb-3">
+          <div class="flex justify-content-start">
+            First name
+          </div>
+          <div class="flex flex-content-end text-500">
+            {{ order.order_details.customer_first_name }}
+          </div>
+        </div>
+        <div class="flex justify-content-between mb-3">
+          <div class="flex justify-content-start">
+            Last name
+          </div>
+          <div class="flex flex-content-end text-500">
+            {{ order.order_details.customer_last_name }}
+          </div>
+        </div>
+        <div class="flex justify-content-between">
+          <div class="flex justify-content-start">
+            Address
+          </div>
+          <div class="flex flex-content-end text-500">
+            Apt 7, Entebbe Rd,
+            <br>
+            Kampala, Uganda.
+          </div>
+        </div>
+      </div>
+      <!--  -->
+      <div class="col-12 item-details surface-200 mb-3 border-round px-3 pb-3">
+        <h6 class="item-title my-3 text-500 text-base">Payment details</h6>
+        <div class="flex justify-content-between mt-3 mb-3">
+          <div class="flex justify-content-start">
+            Type
+          </div>
+          <div class="flex flex-content-end text-500">
+            MoMo Pay
+          </div>
+        </div>
+        <div class="flex justify-content-between mb-3">
+          <div class="flex justify-content-start">
+            Transaction ID
+          </div>
+          <div class="flex flex-content-end text-500">
+            12346567
+          </div>
+        </div>
+      </div>
+      <!--  -->
+      <div class="col-12 item-details surface-200 border-round px-3 pb-3">
+        <h6 class="item-title my-3 text-500 text-base">Amount details</h6>
+        <div class="flex justify-content-between mt-3 mb-3">
+          <div class="flex justify-content-start">
+            Item
+          </div>
+          <div class="flex flex-content-end text-500">
+            UGX 200.00
+          </div>
+        </div>
+        <div class="flex justify-content-between mb-3">
+          <div class="flex justify-content-start">
+            Shipping
+          </div>
+          <div class="flex flex-content-end text-500">
+            UGX 20.00
+          </div>
+        </div>
+        <div class="flex justify-content-between mt-3 mb-3">
+          <div class="flex justify-content-start">
+            VAT
+          </div>
+          <div class="flex flex-content-end text-500">
+            UGX 22.00
+          </div>
+        </div>
+        <div class="flex justify-content-between mb-3">
+          <div class="flex justify-content-start">
+            Payment total
+          </div>
+          <div class="flex flex-content-end text-500">
+            UGX 242.00
+          </div>
+        </div>
+      </div>
+      <!--  -->
+      <div class="col-12 text-center">
+        <button (click)="cancelOrderModal()" label="Cancel Order"
+          class="p-field p-col-12 my-4 width-25 m-auto font-size-14 second-btn" pButton type="button">
+        </button>
+        <!-- Cancel Modal -->
+        <p-dialog header="Cancel Order" [(visible)]="displayModal" [style]="{width: '30vw'}" [baseZIndex]="10000">
+          <ng-template pTemplate="content">
+            <div class="select-reason surface-200 px-3 py-1 ">
+                <p class="text-left text-sm text-500">Please indicate the reason for cancellation</p>
+                <p-cascadeSelect  [(ngModel)]="selectedReason" [options]="reasons" optionLabel="details"
+                optionGroupLabel="details"  [style]="{'minWidth': '100%'}"
+                placeholder="Reason for cancellation*">
+                </p-cascadeSelect>
+            </div>
+            <div class="px-1 mt-3 flex justify-content-between">
+                <div class="text-500">Refund amount</div>
+                <div class="font-bold text-black-alpha-90">UGX 10,001,400.00</div>
+            </div>
+          </ng-template>
+          <ng-template pTemplate="footer">
+            <button (click)="cancelApprovedModal()" label="Cancel Order" class="p-field p-col-12 my-4 width-25 m-auto font-size-14 second-btn" pButton
+              type="button">
+            </button>
+          </ng-template>
+        </p-dialog>
+        <!-- End Cancel Modal -->
+        <!-- Cancel Approved Modal -->
+        <p-dialog class="approvedModal" [(visible)]="approvedModal" [style]="{width: '30vw'}" [baseZIndex]="10000">
+          <ng-template pTemplate="content">
+            <div class="icon mt-5 bg-green-500 text-white text-center w-3rem h-3rem border-circle icon bg-green-500 ">
+              <i class="pi pi-check"></i>
+            </div>
+            <p class="font-bold  text-black-alpha-90">Order cancelled</p>
+            <p class="m-0">We are processing the refund, it might take up to 72 hours.</p>
+          </ng-template>
+          <ng-template pTemplate="footer">
+            <button label="OK" class="p-field p-col-12 my-4 width-25 m-auto font-size-14 second-btn" pButton
+              type="button" [routerLink]="['/orders']">
+            </button>
+          </ng-template>
+        </p-dialog>
+        <!-- End Cancel Approved Modal -->
+      </div>
+    </div>
+  </div>
+</section>

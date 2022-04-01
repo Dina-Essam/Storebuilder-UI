@@ -1,0 +1,25 @@
+.merchants {
+  min-height: 100%;
+
+  .search {
+    background-color: #F5F5F5;
+    border-radius: 5px;
+    outline: none;
+    box-shadow: 0 2px 4px #00000003;
+    color: #A3A3A3;
+    font-size: 12px;
+    font-family: var(--regular-font);
+
+    &:hover {
+      border: 1px solid var(--main-color);
+    }
+
+    &:focus {
+      border: 1px solid var(--main-color);
+    }
+  }
+
+  .active {
+    border-radius: 10px;
+  }
+}

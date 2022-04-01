@@ -1,0 +1,41 @@
+::ng-deep .requestRefund .p-dialog .p-dialog-header,
+::ng-deep .review .p-dialog .p-dialog-header{
+    display: none;
+}
+::ng-deep .p-field-checkbox {
+    position: relative;
+}
+::ng-deep p-checkbox {
+    position: absolute;
+    top: 9%;
+    left: 23rem;
+}
+::ng-deep .p-dialog .p-dialog-footer {
+    text-align: center;
+}
+::ng-deep .p-dialog .p-dialog-footer button {
+    width: 90%;
+}
+.requestRefund {
+    img {
+        width: 37px;
+        height: 48px;
+    }
+    .type-reason {
+    
+    }
+}
+div.icon{
+    position: relative;
+    margin: auto;
+    .pi-check {
+      position: absolute;
+      top: 31%;
+      font-weight: bold;
+      left: 30%;
+      font-size: 1.2rem;
+    }
+}
+.pi-star-fill {
+    color: var(--fourth-color);
+}

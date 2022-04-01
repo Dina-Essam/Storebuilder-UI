@@ -1,0 +1,39 @@
+<section class="login">
+
+  <ng-container >
+    <div class="content-container my-3">
+      <div class="grid justify-content-center margin-x-100">
+        <p class="col-12 bold-font text-center font-size-28 m-0 py-0 mx-4">Sign-in</p>
+        <a class="col-12 main-color text-center no-underline font-size-16 pt-0 m-0 mb-3" [routerLink]="['/register']">
+          No account yet? Create one
+        </a>
+        <div class="col-12 md:col-8 lg:col-4 border-round bg-white shadow-1 px-5 pt-6">
+          <div class="p-fluid p-grid">
+            <div class="p-field p-col-12">
+            <span class="p-float-label mt-3">
+              <p-inputMask inputId="phone-number" mask="999-99999999"  [(ngModel)]="phoneNumber" ></p-inputMask>
+              <label>Phone number *</label>
+          </span>
+            </div>
+            <div class="p-field p-col-12">
+            <span class="p-float-label mt-5">
+            <p-password [(ngModel)]="password" [toggleMask]="true" [feedback]="false"></p-password>
+            <label>Password</label>
+          </span>
+            </div>
+            <div class="flex justify-content-end flex-wrap">
+              <a class="no-underline main-color font-size-12 bold-font mb-4" routerLink="/reset-password">Forgot password?</a>
+            </div>
+            <button [disabled]="!(phoneNumber && password)" (click)="login()"
+                    label="Continue"
+                    class="p-field p-col-12 my-2 width-100 font-size-14 second-btn"
+                    pButton
+                    type="button">
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+</section>

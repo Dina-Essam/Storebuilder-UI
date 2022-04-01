@@ -1,126 +1,76 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterViewInit, Component, HostListener, OnInit} from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
+import {MessageService} from 'primeng/api';
+import {Product} from "../../../../interfaces/product";
+import {ProductService} from "../../../../shared/services/product.service";
+import {Currency} from "../../../../interfaces/global";
+import {StoreService} from "../../../../shared/services/store.service";
 
 @Component({
   selector: 'app-index',
   templateUrl: './index.component.html',
-  styleUrls: ['./index.component.scss']
+  styleUrls: ['./index.component.scss'],
 })
-export class IndexComponent implements OnInit {
-  relatedProducts: Array<any> = []
-  productDetails: any;
-  constructor() { }
+export class IndexComponent implements OnInit, AfterViewInit {
+  relatedProducts: Array<Product> = []
+  currency: Currency = {} as Currency
+  productDetails: Product = {} as Product;
+  productId: number;
+  showPanel: boolean = false
+
+  constructor(
+    private store: StoreService,
+    private activatedRoute: ActivatedRoute,
+    private productService: ProductService,
+    private messageService: MessageService
+  ) {
+    this.productId = this.activatedRoute.snapshot.params['id'];
+  }
 
   ngOnInit(): void {
-    this.getRelatedProducts();
+    this.loadData()
   }
-  getRelatedProducts(): void {
-    this.relatedProducts = [
-      {
-        id: 1,
-        name: 'Apple iPhone 12 Pro Max blue company 128g 12ram',
-        price: 100,
-        rating: '4.8',
-        ratingNumber: 112
-      },
-      {
-        id: 2,
-        name: 'Apple iPhone 12 Pro Max blue company 128g 12ram',
-        price: 100,
-        rating: '4.8',
-        ratingNumber: 112
-      },
-      {
-        id: 3,
-        name: 'Apple iPhone 12 Pro Max blue company 128g 12ram',
-        price: 100,
-        rating: '4.8',
-        ratingNumber: 112
-      },
-      {
-        id: 4,
-        name: 'Apple iPhone 12 Pro Max blue company 128g 12ram',
-        price: 100,
-        rating: '4.8',
-        ratingNumber: 112
-      },
-      {
-        id: 5,
-        name: 'Apple iPhone 12 Pro Max blue company 128g 12ram',
-        price: 100,
-        rating: '4.8',
-        ratingNumber: 112
-      },
-      {
-        id: 6,
-        name: 'Apple iPhone 12 Pro Max blue company 128g 12ram',
-        price: 100,
-        rating: '4.8',
-        ratingNumber: 112
-      },
-      {
-        id: 7,
-        name: 'Apple iPhone 12 Pro Max blue company 128g 12ram',
-        price: 100,
-        rating: '4.8',
-        ratingNumber: 112
-      },
-      {
-        id: 8,
-        name: 'Apple iPhone 12 Pro Max blue company 128g 12ram',
-        price: 100,
-        rating: '4.8',
-        ratingNumber: 112
-      },
-      {
-        id: 9,
-        name: 'Apple iPhone 12 Pro Max blue company 128g 12ram',
-        price: 100,
-        rating: '4.8',
-        ratingNumber: 112
-      },
-      {
-        id: 10,
-        name: 'Apple iPhone 12 Pro Max blue company 128g 12ram',
-        price: 100,
-        rating: '4.8',
-        ratingNumber: 112
-      },
-      {
-        id: 11,
-        name: 'Apple iPhone 12 Pro Max blue company 128g 12ram',
-        price: 100,
-        rating: '4.8',
-        ratingNumber: 112
-      },
-      {
-        id: 12,
-        name: 'Apple iPhone 12 Pro Max blue company 128g 12ram',
-        price: 100,
-        rating: '4.8',
-        ratingNumber: 112
-      },
-      {
-        id: 13,
-        name: 'Apple iPhone 12 Pro Max blue company 128g 12ram',
-        price: 100,
-        rating: '4.8',
-        ratingNumber: 112
-      },
-      {
-        id: 14,
-        name: 'Apple iPhone 12 Pro Max blue company 128g 12ram',
-        price: 100,
-        rating: '4.8',
-        ratingNumber: 112
-      },
-      {
-        id: 15,
-        name: 'Apple iPhone 12 Pro Max blue company 128g 12ram',
-        price: 100,
-        rating: '4.8',
-        ratingNumber: 112
-      }
-    ]
-    this.productDetails = this.relatedProducts[0]
+
+  @HostListener('window:scroll', ['$event'])
+  onScrollEvent() {
+    const sectionDetails = document.querySelector('#details');
+    const relatedProductsSection = document.querySelector('#relatedProducts');
+    const fromTop = sectionDetails ? sectionDetails.getBoundingClientRect().top < -110 : false;
+    const fromBottom = relatedProductsSection ? relatedProductsSection.getBoundingClientRect().top < 550 : false;
+    this.showPanel = fromTop && !fromBottom
+  }
+
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+      // Listen To Store Service For any change on Currency
+      this.store.subscription('currency')
+        .subscribe({
+          next: (res) => this.currency = res
+        });
+    }, 10);
+  }
+
+  loadData(): void {
+    this.store.set("loading",true);
+
+    console.log(this.productId)
+    this.productService.getProductDetails(this.productId)
+      .subscribe({
+        next: (res: any) => {
+
+          console.log(res);
+          this.productDetails = res.data;
+          // this.relatedProducts = res.data.related_products;
+          this.store.set("loading",false);
+
+        },
+        error: (err: any) => {
+          console.error(err);
+          this.messageService.add({severity: 'error', summary: 'Fetch Error', detail: err.message});
+          this.store.set("loading",false);
+
+        },
+        complete: () => console.log('ProductDetails complete')
+      })
   }
 }

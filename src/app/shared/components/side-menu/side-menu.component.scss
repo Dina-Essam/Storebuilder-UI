@@ -16,4 +16,18 @@
       color: var(--main-color)
     }
   }
+  a {
+    color:var(--main-color);
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+    &:hover {
+      &:not(.active) {
+        color: var(--main-color);
+      }
+    }
+    &:visited{
+      color:var(--main-color);
+    }
+  }
 }

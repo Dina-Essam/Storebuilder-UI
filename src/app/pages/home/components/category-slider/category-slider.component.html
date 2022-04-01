@@ -1,37 +1,10 @@
+
 <section class="category-slider card-slider">
   <owl-carousel-o [options]="options">
-    <ng-template carouselSlide>
-      <app-category-card class="mt-2" [name]="'Sports'" [totalItems]="'20'"></app-category-card>
-    </ng-template>
-    <ng-template carouselSlide>
-      <app-category-card class="mt-2" [name]="'Sports'" [totalItems]="'20'"></app-category-card>
-    </ng-template>
-    <ng-template carouselSlide>
-      <app-category-card class="mt-2" [name]="'Sports'" [totalItems]="'20'"></app-category-card>
-    </ng-template>
-    <ng-template carouselSlide>
-      <app-category-card class="mt-2" [name]="'Sports'" [totalItems]="'20'"></app-category-card>
-    </ng-template>
-    <ng-template carouselSlide>
-      <app-category-card class="mt-2" [name]="'Sports'" [totalItems]="'20'"></app-category-card>
-    </ng-template>
-    <ng-template carouselSlide>
-      <app-category-card class="mt-2" [name]="'Sports'" [totalItems]="'20'"></app-category-card>
-    </ng-template>
-    <ng-template carouselSlide>
-      <app-category-card class="mt-2" [name]="'Sports'" [totalItems]="'20'"></app-category-card>
-    </ng-template>
-    <ng-template carouselSlide>
-      <app-category-card class="mt-2" [name]="'Sports'" [totalItems]="'20'"></app-category-card>
-    </ng-template>
-    <ng-template carouselSlide>
-      <app-category-card class="mt-2" [name]="'Sports'" [totalItems]="'20'"></app-category-card>
-    </ng-template>
-    <ng-template carouselSlide>
-      <app-category-card class="mt-2" [name]="'Sports'" [totalItems]="'20'"></app-category-card>
-    </ng-template>
-    <ng-template carouselSlide>
-      <app-category-card class="mt-2" [name]="'Sports'" [totalItems]="'20'"></app-category-card>
-    </ng-template>
+    <ng-container *ngFor="let category of categories">
+      <ng-template carouselSlide>
+        <app-category-card [category]="category" class="mt-2"></app-category-card>
+      </ng-template>
+    </ng-container>
   </owl-carousel-o>
 </section>

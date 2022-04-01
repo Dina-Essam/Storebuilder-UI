@@ -1,5 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
+import {Product} from "../../../interfaces/product";
+import {Currency} from "../../../interfaces/global";
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-product-card',
@@ -7,15 +10,22 @@ import {Router} from "@angular/router";
   styleUrls: ['./product-card.component.scss']
 })
 export class ProductCardComponent implements OnInit {
+  baseUrl: string;
+
+  @Input() product: Product = {} as Product;
+  @Input() currency: Currency = {} as Currency;
+
   constructor(
     private router: Router
   ) {
+    this.baseUrl = environment.apiEndPoint + "/";
 
   }
-  @Input() product: any
+
   ngOnInit(): void {
   }
-  productDetails(): void{
-    this.router.navigate(['product', this.product.id])
+
+  productDetails(): void {
+    this.router.navigate(['product', this.product.specsProductId])
   }
 }

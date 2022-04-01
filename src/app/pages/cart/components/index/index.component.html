@@ -1,0 +1,40 @@
+<section class="cart">
+  <ng-container >
+    <div class="content-container my-3">
+      <ng-container *ngIf="products.length!==0; else empty">
+        <div class="grid">
+          <div class="col-12 md:col-12 lg:col-12 align-items-start justify-content-start my-3">
+            <h2>
+              Your cart
+              <span class="product-nums">({{products.length}})</span>
+            </h2>
+          </div>
+          <div class="col-12 md:col-12 lg:col-12">
+            <div class="grid align-items-start justify-content-between">
+              <div class="col-12 md:col-12 lg:col-6">
+                <ng-container *ngFor="let product of products; index as i" class="flex align-items-center justify-content-center">
+                  <app-cart-product-details (getProductsChange)="addItem($event)" [products]="products" [product]="product" [index]="i"></app-cart-product-details>
+                </ng-container>
+              </div>
+              <div class="col-12 md:col-12 lg:col-5">
+                <app-checkout-card [products]="products"></app-checkout-card>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 md:col-12 lg:col-6">
+            <div class="align-items-start justify-content-start opacity-50">
+              <p>Placing a product on the cart does not reserve that product or price. We only reserve the product
+                once payment is received.</p>
+            </div>
+            <div class="align-items-center justify-content-center text-center">
+              <a class="main-color no-underline" [routerLink]="['/']">Continue shopping</a>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+      <ng-template #empty>
+        <app-empty-cart></app-empty-cart>
+      </ng-template>
+    </div>
+  </ng-container>
+</section>

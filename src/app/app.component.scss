@@ -10,5 +10,11 @@
   min-height: 100vh;
 }
 .main-content{
-  margin-top: 99px;
+  margin-top: 153px;
+}
+::ng-deep
+{
+  .p-toast-top-right{
+    top: 7rem !important;
+  }
 }

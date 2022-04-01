@@ -1,0 +1,51 @@
+<section class="delivery-method-card mr-3">
+  <div class="grid align-items-start justify-content-start px-4 border-round bg-white shadow-1 pt-5 pb-3">
+  <div class="col-12 border-bottom-2 border-200">
+    <div class="flex justify-content-between flex-wrap card-container purple-container">
+      <p class="font-size-15 flex align-items-start justify-content-start mt-0">
+        Item
+      </p>
+      <p class="font-size-15 text-500 flex align-items-end justify-content-end mt-0">
+          UGX {{itemsTotalPrices}}
+      </p>
+    </div>
+    <div class="flex justify-content-between flex-wrap card-container purple-container">
+      <p class="font-size-15 flex align-items-start justify-content-start mt-0">
+        Shipping
+      </p>
+      <p class="font-size-15 text-500 flex align-items-end justify-content-end mt-0">
+        UGX {{shipmentCost| number : '1.2-2'}}
+      </p>
+    </div>
+    <div class="flex justify-content-between flex-wrap card-container purple-container">
+      <p class="font-size-15 flex align-items-start justify-content-start mt-0">
+        VAT
+      </p>
+      <p class="font-size-15 text-500 flex align-items-end justify-content-end mt-0">
+        UGX 00.00
+      </p>
+    </div>
+
+    <div class="flex justify-content-between flex-wrap card-container purple-container">
+      <p class="font-size-15 font-bold flex align-items-start justify-content-start m-0">
+        Payment Total
+      </p>
+      <p class="font-size-15 font-bold flex align-items-end justify-content-end m-0">
+        UGX {{itemsTotalPrices+shipmentCost| number : '1.2-2'}}
+      </p>
+    </div>
+
+  </div>
+    <p class="col-12 font-size-16 bold-font pb-0 mb-0">
+      Shipping
+    </p>
+    <p class="col-12 font-size-12 medium-font text-800 pt-0 m-0 opacity-50">
+      Usually delivered within 2 working days
+    </p>
+    <span class="col-7 p-input-icon-right surface-100">
+      <i class="pi pi-chevron-right" style="color: var(--main-color)"></i>
+      <input class="border-none text-800 font-size-16 surface-100 medium-font width-100" type="text"
+             pInputText [(ngModel)]="address" readonly>
+  </span>
+  </div>
+</section>

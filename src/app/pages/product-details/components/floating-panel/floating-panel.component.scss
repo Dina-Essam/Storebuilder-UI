@@ -1,0 +1,18 @@
+.floating-panel {
+  position: fixed;
+  width: 100vw;
+  height: auto;
+  min-height: 100px;
+  bottom: -31px;
+  z-index: 10;
+  background-color: white;
+
+  .buttons {
+    height: 100%;
+  }
+
+  .h-100 {
+    min-height: 100px;
+    height: auto;
+  }
+}

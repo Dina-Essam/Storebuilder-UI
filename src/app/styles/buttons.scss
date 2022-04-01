@@ -7,3 +7,31 @@
   font-size: 14px;
   font-family: var(--medium-font);
 }
+.main-btn{
+  font-size: 14px;
+  color: white;
+  background-color: var(--main-color);
+  border-radius: 5px;
+  border: 1px solid var(--main-color);
+  font-family: var(--medium-font);
+  padding: 10px 20px;
+  &:hover{
+    color: white !important;
+    background-color: var(--main-color) !important;
+    border: 1px solid var(--main-color) !important;
+  }
+}
+.second-btn{
+  font-size: 14px;
+  color: #000000 ;
+  background-color: var(--fourth-color);
+  border-radius: 5px;
+  border: 1px solid var(--fourth-color);
+  font-family: var(--medium-font);
+  padding: 10px 20px;
+  &:hover{
+    color: #000000 !important;
+    background-color: var(--fourth-color) !important;
+    border: 1px solid var(--fourth-color) !important;
+  }
+}

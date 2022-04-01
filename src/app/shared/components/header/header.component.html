@@ -1,25 +1,57 @@
-<header class="header px-2 pt-1">
-  <div class="grid flex flex-wrap">
+<header [ngClass]="{'full-height' : isActiveSearch}" class="header px-2 pt-1">
+  <div class="grid flex bg-main-color flex-wrap">
     <div class="col-4 md:col-2 lg:col-2 flex align-items-center px-2">
-      <img class="logo" src="https://bestlifeonline.com/wp-content/uploads/sites/3/2018/09/tostitos.jpg?quality=82&strip=1&resize=640%2C360" alt="">
+      <a class="w-full" routerLink="/">
+        <img alt=""
+             class="logo"
+             src="{{baseUrl+logo}}">
+      </a>
     </div>
     <div class="col-8 md:col-4 lg:col-3 md:flex-order-2 flex align-items-center justify-content-center actions px-2">
-      <span class="cursor-pointer">
-        <i class="pi pi-user">
-          <span class="ml-2">{{'header.signIn' | translate}}</span>
-        </i>
-      </span>
-      <a routerLink="/cart" class="cart_route">
+      <ng-container *ngIf="!authToken">
+        <a class="actions" routerLink="/login">
+         <span class="cursor-pointer">
+            <i class="pi pi-user">
+              <span class="ml-2">{{'header.signIn' | translate}}</span>
+            </i>
+         </span>
+        </a>
+      </ng-container>
+      <ng-container *ngIf="authToken">
+        <div class="actions">
+          <p-overlayPanel #op>
+            <ng-template pTemplate>
+              <div class="profile-menu">
+                <div (click)="op.hide()" class="my-2">
+                  <a class="cursor-pointer no-underline main-color font-size-15px regular-font" routerLink="/orders">Your
+                    orders</a>
+                </div>
+                <div (click)="op.hide()" class="my-2">
+                  <a class="cursor-pointer no-underline main-color font-size-15px regular-font"
+                     routerLink="/account/address">Your addresses</a>
+                </div>
+                <div (click)="op.hide()" class="my-2">
+                  <a class="cursor-pointer no-underline main-color font-size-15px regular-font" routerLink="/account">Your Details</a>
+                </div>
+              </div>
+            </ng-template>
+          </p-overlayPanel>
+          <span (click)="op.toggle($event)" class="cursor-pointer">
+            <i class="pi pi-user">
+              <span class="ml-2">{{user.firstname}}</span>
+            </i>
+         </span>
+        </div>
+      </ng-container>
+
+      <a class="cart_route" routerLink="/cart">
         <span class="mx-3 cursor-pointer">
-          <i class="pi pi-shopping-cart" pBadge value="2"></i>
+          <i class="pi pi-shopping-cart" pBadge value={{products.length.toString()}}></i>
         </span>
       </a>
-      <span>
-        <app-language-switch></app-language-switch>
-      </span>
     </div>
     <div class="col-12 md:col-6 lg:col-7 md:flex-order-1 flex-order-2  flex align-items-center">
-      <app-search class="w-full"></app-search>
+      <app-search (onResult)="isActiveSearch = $event" class="w-full"></app-search>
     </div>
   </div>
   <div class="grid">

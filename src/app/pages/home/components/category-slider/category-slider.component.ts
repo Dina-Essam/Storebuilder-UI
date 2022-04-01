@@ -1,12 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input} from '@angular/core';
 import {OwlOptions} from "ngx-owl-carousel-o";
+import {Category} from "../../../../interfaces/category";
 
 @Component({
   selector: 'app-category-slider',
   templateUrl: './category-slider.component.html',
   styleUrls: ['./category-slider.component.scss']
 })
-export class CategorySliderComponent implements OnInit {
+export class CategorySliderComponent  {
 
   options: OwlOptions;
 
@@ -67,7 +68,8 @@ export class CategorySliderComponent implements OnInit {
     };
   }
 
-  ngOnInit(): void {
-  }
+  @Input() categories: Array<Category> = []
+
+
 
 }

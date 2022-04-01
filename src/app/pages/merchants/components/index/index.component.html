@@ -1,0 +1,26 @@
+<section class="merchants content-container mt-5">
+  <div class="grid">
+    <div class="col-12 md:col-6 flex justify-content-center  md:justify-content-start">
+      <div class="font-size-28 bold-font">Merchants</div>
+    </div>
+    <div class="col-12 md:col-6 flex justify-content-center md:justify-content-end">
+      <input [(ngModel)]="search" class="p-inputtext-lg search" pInputText placeholder="Search merchant" type="text"/>
+    </div>
+  </div>
+  <div class="mt-5 flex flex-row justify-content-start lg:justify-content-evenly flex-wrap">
+    <ng-container *ngFor="let letter of criteria">
+      <div (click)="search = letter"
+           [ngClass]="{'shadow-4 active': search === letter}"
+           class="main-color p-2 cursor-pointer font-size-20 bold-font uppercase">
+        {{letter}}
+      </div>
+    </ng-container>
+  </div>
+
+  <div class="mt-8">
+    <ng-container *ngFor="let merchant of merchants | merchantFilter : search">
+      <app-merchant-block [data]="merchant"></app-merchant-block>
+    </ng-container>
+  </div>
+
+</section>

@@ -1,0 +1,12 @@
+::ng-deep {
+  .p-dialog .p-dialog-header {
+    display: none;
+  }
+
+  .p-dialog .p-dialog-content {
+    padding: 0px;
+  }
+  .bg-red{
+    background-color: #FF0049 !important;
+  }
+}

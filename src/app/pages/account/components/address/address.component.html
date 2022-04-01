@@ -1,0 +1,120 @@
+<section class="address">
+  <div class="content-container mt-5">
+    <h2>{{'account.address.addAddress' | translate}}</h2>
+    <div class="grid">
+      <div class="col-12 md:col-7">
+        <div class="address-card shadow-1 p-3">
+          <div class="grid">
+            <div class="col-12">
+              <div class="p-inputgroup search-group">
+                <span class="p-inputgroup-addon icon-bg">
+                  <i class="pi pi-search"></i>
+                </span>
+                <input
+                       (keydown.enter)="$event.preventDefault()"
+                       class="map-search"
+                       pInputText placeholder="{{'account.address.search' | translate}}"
+                       autocorrect="off" autocapitalize="off" spellcheck="off" type="text" #search>
+                <span (click)="clear()" class="p-inputgroup-addon icon-bg">
+                  <i class="pi pi-times-circle"></i>
+                </span>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="map" #map>
+                <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom" [style.height.px]="map.offsetHeight">
+                  <agm-marker [latitude]="latitude" [longitude]="longitude" [markerDraggable]="true"
+                              (dragEnd)="markerDragEnd($event)"></agm-marker>
+                </agm-map>
+              </div>
+            </div>
+            <form class="grid" [formGroup]="addressForm">
+              <div class="col-12 md:col-6 mt-3">
+                <div class="p-float-label w-full">
+                  <input class="form-input" id="fname" formControlName="first_name" pInputText type="text">
+                  <label for="name">{{'account.address.first-name' | translate}}*</label>
+                </div>
+              </div>
+              <div class="col-12 md:col-6 mt-3">
+                <div class="p-float-label w-full">
+                  <input class="form-input" id="lname" formControlName="last_name" pInputText type="text">
+                  <label for="name">{{'account.address.last-name' | translate}}*</label>
+                </div>
+              </div>
+              <div class="col-12 md:col-6 mt-3">
+                <div class="p-float-label w-full">
+                  <input class="form-input" id="number" formControlName="phone"
+                  [value]="this.addressForm.value.phone"
+                  (blur)="OnlyNumeric($event.target)"
+                   pInputText type="number">
+                  <label for="number">{{'account.address.phone' | translate}}*</label>
+                </div>
+              </div>
+              <div class="col-12 md:col-6 mt-3">
+                <div class="p-float-label w-full">
+                  <input class="form-input" id="street" pInputText formControlName="address1" type="text">
+                  <label for="street">{{'account.address.street' | translate}}*</label>
+                </div>
+              </div>
+              <div class="col-12 md:col-6 mt-3">
+                <div class="p-float-label w-full">
+                  <input class="form-input" id="building" pInputText type="text">
+                  <label for="building">{{'account.address.building' | translate}}</label>
+                </div>
+              </div>
+              <div class="col-12 md:col-6 mt-3">
+                <div class="p-float-label w-full">
+                  <input class="form-input" id="country" formControlName="country" pInputText type="text">
+                  <label for="city">{{'account.address.country' | translate}}*</label>
+                </div>
+              </div>
+              <div class="col-12 md:col-6 mt-3">
+                <div class="p-float-label w-full">
+                  <input class="form-input" id="city" pInputText formControlName="city" type="text">
+                  <label for="city">{{'account.address.city' | translate}}*</label>
+                </div>
+              </div>
+              <div class="col-12 md:col-6 mt-3">
+                <div class="p-float-label w-full">
+                  <input class="form-input" id="state" formControlName="state" pInputText type="text">
+                  <label for="city">{{'account.address.state' | translate}}*</label>
+                </div>
+              </div>
+              <div class="col-12 md:col-6 mt-3">
+                <div class="p-float-label w-full">
+                  <input class="form-input" id="postcode" formControlName="postcode"
+                  [value]="this.addressForm.value.postcode"
+                  pInputText
+                  (blur)="OnlyNumeric($event.target)" type="number">
+                  <label for="city">{{'account.address.post-code' | translate}}*</label>
+                </div>
+              </div>
+              <div class="col-12 md:col-6 mt-3">
+                <div class="p-float-label w-full">
+                  <input class="form-input" id="landMark" pInputText type="text">
+                  <label for="landMark">{{'account.address.landMark' | translate}}</label>
+                </div>
+              </div>
+              <div class="col-12 md:col-6 mt-3">
+                <div class="p-float-label w-full">
+                  <input class="form-input" id="instructions" pInputText type="text">
+                  <label for="instructions">{{'account.address.instructions' | translate}}</label>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="grid">
+            <div class="col-12 md:col-6 mt-3">
+              <button [label]="'account.address.addAddress' | translate"
+                      [disabled]="!addressForm.valid"
+                      class="w-full second-btn" pButton
+                      (click)="onSubmit()"
+                      type="button">
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

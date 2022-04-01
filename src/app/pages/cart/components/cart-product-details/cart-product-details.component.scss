@@ -1,0 +1,24 @@
+.cart_content {
+  input[type="number"] {
+    -webkit-appearance: textfield !important;
+    -moz-appearance: textfield !important;
+    appearance: textfield !important;
+  }
+
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+  }
+
+  .img_col{
+    .img_container{
+      text-align: center;
+      margin: auto;
+      img {
+        height: auto;
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+}

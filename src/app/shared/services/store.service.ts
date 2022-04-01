@@ -1,18 +1,21 @@
+/*** MiniStore **************************************/
+/*** https://github.com/aymanElkhouly/mini-store ***/
+/****Author: Ayman El Khouly **********************/
 import {Injectable} from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs';
+
 @Injectable({
   providedIn: 'root',
 })
 export class StoreService {
-
+  public storeData: any;
+  public localStoreNames: Array<string>;
+  private readonly store: any;
   constructor() {
     this.storeData = {};
     this.store = {};
     this.localStoreNames = [];
   }
-  public storeData: any;
-  private readonly store: any;
-  localStoreNames: Array<string>;
 
   createNewStore(storeName: string, initData: any, localStore: boolean): void {
     this.store[storeName] = new BehaviorSubject<any>(initData);
@@ -38,17 +41,18 @@ export class StoreService {
         // *Case(if had local store) Set data to localDb (indexDb || localStorage) *//
         this.setLocalStorage(storeName , data);
         this.update(storeName , data);
-        this.fireChanges(storeName, currentStore);
+         this.fireChanges(storeName, currentStore);
       } else {
         // *Case (without local store) Set data to localDb (indexDb) *//
         this.update(storeName , data);
-        this.fireChanges(storeName, currentStore);
+         this.fireChanges(storeName, currentStore);
       }
 
     } else {
       console.error(`${storeName} is not assign to store please check it`);
     }
   }
+
   private fireChanges(storeName: string, currentStore: BehaviorSubject<any>): void{
     currentStore.next(this.storeData[storeName]);
   }
@@ -69,10 +73,12 @@ export class StoreService {
     }
     return true;
   }
+
   private  setLocalStorage(key: string, data: any): any {
     const stringData = data ? (typeof data === 'string' ? data : JSON.stringify(data))  : '';
     return  localStorage.setItem(key, stringData);
   }
+
   private  getFromLocalStorage(key: string): any {
     const data = localStorage.getItem(key) || '';
     if (this.isJson(data)) {

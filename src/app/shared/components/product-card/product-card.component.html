@@ -1,13 +1,15 @@
 <div class="product-card shadow-1 cursor-pointer" (click)="productDetails()">
-  <img src="https://z.nooncdn.com/products/tr:n-t_240/v1638171385/N52057841A_1.jpg" alt="">
-  <div class="title mt-3">{{product.name}}</div>
+<!--  <img src="https://z.nooncdn.com/products/tr:n-t_240/v1638171385/N52057841A_1.jpg" alt="">-->
+  <img [src]="baseUrl+product.productImage" alt="">
+
+  <div class="title mt-3">{{product.productName}}</div>
   <div class="price-container mt-2">
-    <div class="currency">EGP</div>
-    <div class="price mx-1">{{product.price}}</div>
+    <!-- <div class="currency">{{currency.symbol}}</div> -->
+    <div class="price mx-1">{{product.priceValue | number : '1.2-2'}}</div>
   </div>
-  <div class="rating mt-2">
+  <!-- <div class="rating mt-2">
     <i class="star pi pi-star-fill"></i>
     <div class="rate mx-1">{{product.rating}}</div>
-    <div class="rating-number">({{product.ratingNumber}})</div>
-  </div>
+    <div class="rating-number">({{product.rates_count}})</div>
+  </div> -->
 </div>

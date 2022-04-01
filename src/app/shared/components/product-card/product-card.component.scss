@@ -11,7 +11,7 @@
   img{
     width: 76px;
     height: 104px;
-    object-fit: contain;
+    object-fit: fill;
   }
   .title{
     font-size: 12px;
@@ -22,6 +22,7 @@
     text-overflow: ellipsis;
     max-width: 120px;
     text-align: center;
+    min-height: 27px;
     @supports (-webkit-line-clamp: 2) {
       overflow: hidden;
       text-overflow: ellipsis;

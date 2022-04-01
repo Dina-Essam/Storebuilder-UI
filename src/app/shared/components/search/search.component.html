@@ -1,6 +1,24 @@
-<div class="p-inputgroup">
-  <input [(ngModel)]="search" type="text w-full" pInputText placeholder="Search on MoMoMarket" (keyup.enter)="searchProduct()">
+<div class="product-search p-inputgroup">
+  <input  (keyup)="searchProduct($event)" [(ngModel)]="search" pInputText
+         placeholder="Search on MoMoMarket" type="text w-full">
   <span class="p-inputgroup-addon color">
-    <i class="pi pi-search" (click)="searchProduct()"></i>
+    <i (click)="searchProduct($event)" class="pi pi-search"></i>
   </span>
+  <ng-container *ngIf="displayResult">
+    <div class="search-results">
+      <div class="my-3"></div>
+      <div *ngFor="let option of searchResult; index as i"   class="px-2 padding-y-5">
+        <div (click)="NavigateToProduct(option.id)">
+          <span class="medium-font font-size-14" >{{option.name}}</span>
+          <!-- <span class="font-size-14 mx-1"> 12 Pro Max blue color 126 Go</span> -->
+        </div>
+        <div>
+          <span class="prop-color font-size-14">in</span>
+          <span class="main-color font-size-14 mx-1">{{option.categoryName}}</span>
+        </div>
+        <p-divider></p-divider>
+      </div>
+    </div>
+    <div class="overlay"></div>
+  </ng-container>
 </div>
