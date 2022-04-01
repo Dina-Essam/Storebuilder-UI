@@ -20,7 +20,7 @@ export class OrderSummaryCartComponent implements OnInit {
   req :any;
 shipmentDetails=new Array<any>();
   constructor(private store: StoreService,
-    private shopService: ShopService, private shipmentService: ShipmentService) { 
+    private shopService: ShopService, private shipmentService: ShipmentService) {
          this.req = new priceEstimation();
     }
 
@@ -33,9 +33,10 @@ shipmentDetails=new Array<any>();
     this.store.subscription('cartProducts')
       .subscribe({
         next: (res: any) => {
+          console.log(res);
           if (res.length > 0) {
-            res.forEach((element: { price: number; }) => {
-              this.itemsTotalPrices += element.price
+            res.forEach((element: { price: number; quantity: number; }) => {
+              this.itemsTotalPrices += (element.price*element.quantity)
             });
           }
         },
@@ -45,7 +46,7 @@ shipmentDetails=new Array<any>();
       });
   }
   CalculateShipmentCost() {
-   
+
     this.shipmentCost = 0;
     this.store.subscription('orderData')
       .subscribe({
