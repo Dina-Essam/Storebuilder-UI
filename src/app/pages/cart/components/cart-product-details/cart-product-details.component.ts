@@ -17,6 +17,7 @@ export class CartProductDetailsComponent {
   @Output() getProductsChange = new EventEmitter<any>();
 
   @Input() index: number = 0 as number;
+  quantityProcessed:boolean=false;
   baseUrl: string;
 
   constructor(private productLogicService: ProductLogicService, private store: StoreService) {
@@ -26,26 +27,47 @@ export class CartProductDetailsComponent {
 
 
 
-  
+
   handleMinus(product: any) {
+    this.quantityProcessed=true;
     if (product.quantity > 0) {
       product.quantity = product.quantity - 1;
-      this.productLogicService.modifyCart(product, "update", this.products);
+      this.productLogicService.modifyCart(product, "update", this.products)
+      .subscribe(res => this.quantityProcessed=false);
     }
     else if (product.quantity == 0) {
       this.onDelete(product);
     }
-    
-  }
-  handlePlus(product: any) {
-    product.quantity = product.quantity + 1;
 
-    this.productLogicService.modifyCart(product, "update", this.products);
   }
+
+  handlePlus(product: any) {
+    this.quantityProcessed=true;
+    product.quantity = product.quantity + 1;
+    this.productLogicService.modifyCart(product, "update", this.products)
+    .subscribe(res => this.quantityProcessed=false);
+  }
+
   onDelete(product: any) {
     product.quantity = 0;
     this.products = this.products.filter((x: any) => x.id !== product.id);
-    this.productLogicService.modifyCart(product, "update", this.products);
+    this.productLogicService.modifyCart(product, "update", this.products)
+    .subscribe(res => this.quantityProcessed=false);
     this.getProductsChange.emit(this.products)
+  }
+
+  updateQuantity(quantity: number,product:any) {
+    this.quantityProcessed=true;
+    if (quantity == 0)
+    {
+      this.onDelete(product);
+    }
+    else if (quantity > 0)
+    {
+      product.quantity = quantity;
+      this.productLogicService.modifyCart(product,"update", this.products)
+        .subscribe(res => this.quantityProcessed=false);
+    }
+
   }
 }
