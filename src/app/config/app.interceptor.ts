@@ -45,7 +45,7 @@ export class AppInterceptor implements HttpInterceptor {
     if (this.guestToken != '') {
       this.headers.token = this.guestToken;
     }
-    this.headers.lang = this.store.get('lang') || localStorage.getItem('lang');
+    this.headers.lang = this.store.get('lang') || localStorage.getItem('lang')||'en';
     this.headers.currency = 'UGX'
     this.clonedRequest = request.clone({
       // withCredentials: true,
